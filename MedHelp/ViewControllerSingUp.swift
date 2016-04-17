@@ -13,7 +13,9 @@ class ViewControllerSingUp: UIViewController {
     @IBOutlet weak var NameTextField: UITextField!
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
-    @IBOutlet weak var ConfirmPasswordTextField: UITextField!
+    @IBOutlet weak var RePasswordTextField: UITextField!
+    @IBOutlet weak var DisplayMessage: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,5 +52,20 @@ class ViewControllerSingUp: UIViewController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    func displayAlert(message: String) {
+        DisplayMessage.text = "*" + message
+    }
 
+    @IBAction func signUP(sender: UIButton) {
+        let name = NameTextField.text!
+        let email = EmailTextField.text!
+        let password = PasswordTextField.text!
+        let rePassword = RePasswordTextField.text!
+        
+        if name.isEmpty || email.isEmpty || password.isEmpty || rePassword.isEmpty {
+            displayAlert("Todos os campos devem ser preenchidos")
+        }
+    }
+    
 }
