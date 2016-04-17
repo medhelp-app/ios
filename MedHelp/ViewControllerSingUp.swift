@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewControllerSingUp: UIViewController {
 
@@ -65,6 +66,31 @@ class ViewControllerSingUp: UIViewController {
         
         if name.isEmpty || email.isEmpty || password.isEmpty || rePassword.isEmpty {
             displayAlert("Todos os campos devem ser preenchidos")
+        } else if !Validator.validateEmail(email) {
+            displayAlert("Email inválido")
+        } else if !Validator.validatePassword(password) {
+            displayAlert("Sua senha deve conter mais de 7 caracteres")
+        } else if password != rePassword {
+            displayAlert("As senhas devem ser iguais")
+        } else {
+            Alamofire.request(.POST, "http://192.168.0.8:4000/api/users/", parameters: ["name":name, "email":email, "password":password, "rePassword":rePassword]).responseJSON(completionHandler: { (response) -> Void in
+                
+                if let JSON = response.result.value {
+                    
+                    let dict = JSON as? NSDictionary
+                    
+                    let keyExists = dict!["error"] != nil
+                    
+                    if keyExists {
+                        self.displayAlert("Error: \(JSON["error"])")
+                    } else {
+                        self.performSegueWithIdentifier("mainScreenFromSignup", sender: self)
+                    }
+                    
+                } else {
+                    self.displayAlert("The application could not connect to the server")
+                }
+            })
         }
     }
     
