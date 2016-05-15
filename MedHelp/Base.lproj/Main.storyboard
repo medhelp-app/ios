@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -210,10 +210,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-nh-8CW">
-                                <rect key="frame" x="50" y="220" width="275" height="282"/>
+                                <rect key="frame" x="50" y="170" width="275" height="332"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6w-E3-fJW">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dqX-9Y-RuD"/>
                                         </constraints>
@@ -225,7 +225,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ib-Ie-b3x">
-                                        <rect key="frame" x="0.0" y="60" width="275" height="45"/>
+                                        <rect key="frame" x="0.0" y="58" width="275" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="kvo-ok-4BH"/>
                                         </constraints>
@@ -237,7 +237,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jty-3u-YgZ">
-                                        <rect key="frame" x="0.0" y="119" width="275" height="44"/>
+                                        <rect key="frame" x="0.0" y="116" width="275" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Fmq-iz-QWr"/>
                                         </constraints>
@@ -249,7 +249,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-Di-4st">
-                                        <rect key="frame" x="0.0" y="178" width="275" height="45"/>
+                                        <rect key="frame" x="0.0" y="174" width="275" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Hcs-5W-UbI"/>
                                         </constraints>
@@ -260,8 +260,16 @@
                                             <outlet property="delegate" destination="8Uc-Fb-WW8" id="MEa-Hb-bSR"/>
                                         </connections>
                                     </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-4D-EEb">
+                                        <rect key="frame" x="0.0" y="232" width="275" height="44"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="Médico"/>
+                                            <segment title="Paciente"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ut-eR-Apg">
-                                        <rect key="frame" x="0.0" y="238" width="275" height="45"/>
+                                        <rect key="frame" x="0.0" y="289" width="275" height="43"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -283,7 +291,7 @@
                             <constraint firstAttribute="trailing" secondItem="KzO-Nx-f5G" secondAttribute="trailing" id="b4c-SG-5qG"/>
                             <constraint firstItem="kFO-nQ-uH4" firstAttribute="top" secondItem="9H0-Il-aYd" secondAttribute="bottom" id="fPs-0S-5Dq"/>
                             <constraint firstItem="INJ-gG-E8t" firstAttribute="top" secondItem="KzO-Nx-f5G" secondAttribute="bottom" id="hbz-Wb-Std"/>
-                            <constraint firstItem="Noj-nh-8CW" firstAttribute="top" secondItem="9H0-Il-aYd" secondAttribute="bottom" constant="200" id="ihn-uW-da7"/>
+                            <constraint firstItem="Noj-nh-8CW" firstAttribute="top" secondItem="9H0-Il-aYd" secondAttribute="bottom" constant="150" id="ihn-uW-da7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
