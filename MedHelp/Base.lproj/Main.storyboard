@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145.5" y="354.5"/>
+            <point key="canvasLocation" x="141.5" y="306.5"/>
         </scene>
         <!--View Controller Main Screen-->
         <scene sceneID="yiJ-D2-DPC">
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAB-II-bmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168.5" y="1210.5"/>
+            <point key="canvasLocation" x="141.5" y="1154.5"/>
         </scene>
         <!--View Controller Sing Up-->
         <scene sceneID="kjH-f3-ztz">
@@ -210,10 +210,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-nh-8CW">
-                                <rect key="frame" x="50" y="170" width="275" height="332"/>
+                                <rect key="frame" x="50" y="120" width="275" height="382"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6w-E3-fJW">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dqX-9Y-RuD"/>
                                         </constraints>
@@ -225,7 +225,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ib-Ie-b3x">
-                                        <rect key="frame" x="0.0" y="58" width="275" height="43"/>
+                                        <rect key="frame" x="0.0" y="66" width="275" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="kvo-ok-4BH"/>
                                         </constraints>
@@ -237,7 +237,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jty-3u-YgZ">
-                                        <rect key="frame" x="0.0" y="116" width="275" height="43"/>
+                                        <rect key="frame" x="0.0" y="133" width="275" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Fmq-iz-QWr"/>
                                         </constraints>
@@ -249,7 +249,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-Di-4st">
-                                        <rect key="frame" x="0.0" y="174" width="275" height="43"/>
+                                        <rect key="frame" x="0.0" y="199" width="275" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Hcs-5W-UbI"/>
                                         </constraints>
@@ -260,44 +260,38 @@
                                             <outlet property="delegate" destination="8Uc-Fb-WW8" id="MEa-Hb-bSR"/>
                                         </connections>
                                     </textField>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-4D-EEb">
-                                        <rect key="frame" x="0.0" y="232" width="275" height="44"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-4D-EEb">
+                                        <rect key="frame" x="0.0" y="265" width="275" height="53"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <segments>
-                                            <segment title="Médico"/>
                                             <segment title="Paciente"/>
+                                            <segment title="Médico"/>
                                         </segments>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ut-eR-Apg">
-                                        <rect key="frame" x="0.0" y="289" width="275" height="43"/>
+                                        <rect key="frame" x="0.0" y="331" width="275" height="51"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Jst-3h-QgP">
+                                        <rect key="frame" x="0.0" y="382" width="275" height="0.0"/>
+                                    </activityIndicatorView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="KzO-Nx-f5G" secondAttribute="trailing" id="3Qy-p0-0kJ"/>
                             <constraint firstItem="kFO-nQ-uH4" firstAttribute="trailing" secondItem="P3E-No-Lg8" secondAttribute="trailingMargin" id="4BO-xY-P1F"/>
                             <constraint firstItem="Noj-nh-8CW" firstAttribute="leading" secondItem="P3E-No-Lg8" secondAttribute="leading" constant="50" id="4dX-a7-ovT"/>
-                            <constraint firstItem="KzO-Nx-f5G" firstAttribute="leading" secondItem="P3E-No-Lg8" secondAttribute="leading" id="CDM-ft-Mtr"/>
                             <constraint firstItem="KzO-Nx-f5G" firstAttribute="leading" secondItem="P3E-No-Lg8" secondAttribute="leading" id="Efa-2C-XZL"/>
                             <constraint firstItem="KzO-Nx-f5G" firstAttribute="top" secondItem="Noj-nh-8CW" secondAttribute="bottom" constant="100" id="KVg-Zq-kcv"/>
-                            <constraint firstItem="INJ-gG-E8t" firstAttribute="top" secondItem="KzO-Nx-f5G" secondAttribute="bottom" constant="54" id="Pal-Pz-dKA"/>
-                            <constraint firstItem="kFO-nQ-uH4" firstAttribute="top" secondItem="9H0-Il-aYd" secondAttribute="bottom" constant="30" id="WTW-U8-2nl"/>
                             <constraint firstAttribute="trailing" secondItem="Noj-nh-8CW" secondAttribute="trailing" constant="50" id="ZRn-6T-lef"/>
                             <constraint firstAttribute="trailing" secondItem="KzO-Nx-f5G" secondAttribute="trailing" id="b4c-SG-5qG"/>
                             <constraint firstItem="kFO-nQ-uH4" firstAttribute="top" secondItem="9H0-Il-aYd" secondAttribute="bottom" id="fPs-0S-5Dq"/>
                             <constraint firstItem="INJ-gG-E8t" firstAttribute="top" secondItem="KzO-Nx-f5G" secondAttribute="bottom" id="hbz-Wb-Std"/>
-                            <constraint firstItem="Noj-nh-8CW" firstAttribute="top" secondItem="9H0-Il-aYd" secondAttribute="bottom" constant="150" id="ihn-uW-da7"/>
+                            <constraint firstItem="Noj-nh-8CW" firstAttribute="top" secondItem="9H0-Il-aYd" secondAttribute="bottom" constant="100" id="ihn-uW-da7"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="WTW-U8-2nl"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -306,18 +300,20 @@
                         <outlet property="NameTextField" destination="O6w-E3-fJW" id="HbT-gs-lga"/>
                         <outlet property="PasswordTextField" destination="Jty-3u-YgZ" id="gZa-OJ-GfI"/>
                         <outlet property="RePasswordTextField" destination="ksn-Di-4st" id="zmM-lf-Dnd"/>
-                        <segue destination="NZ1-Ce-evH" kind="presentation" identifier="mainScreenFromSignup" id="1gx-BI-2a9"/>
+                        <outlet property="spinner" destination="Jst-3h-QgP" id="2Qx-kx-Xl3"/>
+                        <outlet property="userTypeButton" destination="FXP-4D-EEb" id="pSf-Zh-FDr"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="loginScreen" id="PVH-7j-bKr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEd-hZ-SBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624.5" y="354.5"/>
+            <point key="canvasLocation" x="720.5" y="306.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo" width="587" height="115"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1gx-BI-2a9"/>
+        <segue reference="PVH-7j-bKr"/>
     </inferredMetricsTieBreakers>
 </document>

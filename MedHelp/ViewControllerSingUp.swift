@@ -15,7 +15,9 @@ class ViewControllerSingUp: UIViewController {
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var RePasswordTextField: UITextField!
+    @IBOutlet weak var userTypeButton: UISegmentedControl!
     @IBOutlet weak var DisplayMessage: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
@@ -55,7 +57,11 @@ class ViewControllerSingUp: UIViewController {
     }
     
     func displayAlert(message: String) {
-        DisplayMessage.text = "*" + message
+        if (message != "") {
+            DisplayMessage.text = "*" + message
+        } else {
+            DisplayMessage.text = message
+        }
     }
 
     @IBAction func signUP(sender: UIButton) {
@@ -63,6 +69,8 @@ class ViewControllerSingUp: UIViewController {
         let email = EmailTextField.text!
         let password = PasswordTextField.text!
         let rePassword = RePasswordTextField.text!
+        let userType = userTypeButton.selectedSegmentIndex
+
         
         if name.isEmpty || email.isEmpty || password.isEmpty || rePassword.isEmpty {
             displayAlert("Todos os campos devem ser preenchidos")
@@ -73,7 +81,11 @@ class ViewControllerSingUp: UIViewController {
         } else if password != rePassword {
             displayAlert("As senhas devem ser iguais")
         } else {
-            Alamofire.request(.POST, "http://192.168.0.8:4000/api/users/", parameters: ["name":name, "email":email, "password":password, "rePassword":rePassword]).responseJSON(completionHandler: { (response) -> Void in
+            displayAlert("");
+            self.spinner.startAnimating()
+            Alamofire.request(.POST, "http://192.168.0.6:4000/api/users/", parameters: ["name":name, "email":email, "password":password, "rePassword":rePassword, "userType" : userType]).responseJSON(completionHandler: { (response) -> Void in
+                
+                self.spinner.stopAnimating()
                 
                 if let JSON = response.result.value {
                     
@@ -84,11 +96,11 @@ class ViewControllerSingUp: UIViewController {
                     if keyExists {
                         self.displayAlert("Error: \(JSON["error"])")
                     } else {
-                        self.performSegueWithIdentifier("mainScreenFromSignup", sender: self)
+                        self.performSegueWithIdentifier("loginScreen", sender: self)
                     }
                     
                 } else {
-                    self.displayAlert("The application could not connect to the server")
+                    self.displayAlert("A aplicação não conseguiu acessar o servidor")
                 }
             })
         }
