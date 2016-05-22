@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
-		732EFC171CC329AC005DD736 /* ViewControllerMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC161CC329AC005DD736 /* ViewControllerMainScreen.swift */; };
+		73A0ED1A1CF22CB100193299 /* ViewControllerPatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A0ED191CF22CB100193299 /* ViewControllerPatientProfile.swift */; };
 		73D504761CC4002300A3B1A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D504661CC3FFE400A3B1A9 /* Alamofire.framework */; };
 		73D504771CC4002A00A3B1A9 /* Alamofire.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 73D504661CC3FFE400A3B1A9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73D5047B1CC40A7E00A3B1A9 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5047A1CC40A7E00A3B1A9 /* Validator.swift */; };
@@ -110,8 +111,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorProfile.swift; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
-		732EFC161CC329AC005DD736 /* ViewControllerMainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerMainScreen.swift; sourceTree = "<group>"; };
+		73A0ED191CF22CB100193299 /* ViewControllerPatientProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPatientProfile.swift; sourceTree = "<group>"; };
 		73D5045B1CC3FFE400A3B1A9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-3.3.1/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		73D5047A1CC40A7E00A3B1A9 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = ../Validator.swift; sourceTree = "<group>"; };
 		73E5B4DE1CB971A7003C9435 /* MedHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		730074F81CE94F45003313C1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		73D5045C1CC3FFE400A3B1A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,11 +211,13 @@
 		73E5B4E01CB971A8003C9435 /* MedHelp */ = {
 			isa = PBXGroup;
 			children = (
+				730074F81CE94F45003313C1 /* Data */,
 				73D5047C1CC40AD900A3B1A9 /* Utilities */,
 				73E5B4E11CB971A8003C9435 /* AppDelegate.swift */,
 				73E5B4E31CB971A8003C9435 /* ViewController.swift */,
 				732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */,
-				732EFC161CC329AC005DD736 /* ViewControllerMainScreen.swift */,
+				730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */,
+				73A0ED191CF22CB100193299 /* ViewControllerPatientProfile.swift */,
 				73E5B4E51CB971A8003C9435 /* Main.storyboard */,
 				73E5B4EB1CB971A8003C9435 /* Assets.xcassets */,
 				73E5B4ED1CB971A8003C9435 /* LaunchScreen.storyboard */,
@@ -430,10 +441,11 @@
 			files = (
 				73E5B4E41CB971A8003C9435 /* ViewController.swift in Sources */,
 				73E5B4E21CB971A8003C9435 /* AppDelegate.swift in Sources */,
-				732EFC171CC329AC005DD736 /* ViewControllerMainScreen.swift in Sources */,
+				73A0ED1A1CF22CB100193299 /* ViewControllerPatientProfile.swift in Sources */,
 				732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */,
 				73D5047B1CC40A7E00A3B1A9 /* Validator.swift in Sources */,
 				73E5B4EA1CB971A8003C9435 /* MedHelp.xcdatamodeld in Sources */,
+				730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +596,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MedHelp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Medhelp.Medhelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -596,6 +609,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MedHelp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Medhelp.Medhelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

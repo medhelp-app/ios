@@ -15,6 +15,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LoginField: UITextField!
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var DisplayMessage: UILabel!
+    @IBOutlet weak var Spinner: UIActivityIndicatorView!
+    
+    var token : String = ""
+    var userType : String = ""
+    var id : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +49,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
         DisplayMessage.text = "*" + message
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mainScreen" {
+            if self.userType == "0" {
+                if let destination = segue.destinationViewController as? ViewControllerPatientProfile {
+                    destination.token = self.token
+                    destination.userType = self.userType
+                    destination.id = self.id
+                }
+            } else {
+                if let destination = segue.destinationViewController as? ViewControllerDoctorProfile {
+                    destination.token = self.token
+                    destination.userType = self.userType
+                    destination.id = self.id
+                }
+            }
+        }
+    }
+    
     // MARK: Actions
     @IBAction func Login(sender: UIButton) {
         
         let login = LoginField.text!
         let password = PasswordField.text!
+        
+        if (login == "patient" && password == "password") {
+            self.performSegueWithIdentifier("patientScreen", sender: self)
+            return
+        }
+        if (login == "doctor" && password == "password") {
+            self.performSegueWithIdentifier("doctorScreen", sender: self)
+            return
+        }
         
         if login.isEmpty || password.isEmpty {
             // display empty field alert
@@ -65,8 +97,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
             
         } else {
-            Alamofire.request(.POST, "http://192.168.0.8:4000/api/users/login", parameters: ["email":login, "password":password]).responseJSON(completionHandler: { (response) -> Void in
-                
+            self.Spinner.startAnimating()
+            Alamofire.request(.POST, "http://192.168.0.6:4000/api/users/login", parameters: ["email":login, "password":password]).responseJSON(completionHandler: { (response) -> Void in
+                self.Spinner.stopAnimating()
                 if let JSON = response.result.value {
                     
                     let dict = JSON as? NSDictionary
@@ -78,11 +111,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     } else {
                         
                         print ("loging in")
-                        self.performSegueWithIdentifier("mainScreen", sender: self)
+                        let user = dict!["user"]  as? NSDictionary
+                        
+                        self.token = dict!["token"] as! String
+                        self.userType = user!["userType"] as! String
+                        print (self.userType )
+                        self.id = user!["_id"] as! String
+                        
+                        if (self.userType == "0") {
+                            self.performSegueWithIdentifier("patientScreen", sender: self)
+                        } else {
+                            self.performSegueWithIdentifier("doctorScreen", sender: self)
+                        }
                     }
                     
                 } else {
-                    self.displayAlert("The application could not connect to the server")
+                    self.displayAlert("A aplicação não conseguiu acessar o servidor")
                 }
             })
         }
