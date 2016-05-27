@@ -1,14 +1,14 @@
 //
-//  ViewControllerDoctorScreen.swift
+//  ViewControllerEditPatient.swift
 //  MedHelp
 //
-//  Created by Luiz Daniel Ramos Franca on 5/15/16.
+//  Created by Luiz Daniel Ramos Franca on 5/23/16.
 //  Copyright © 2016 MedHelp. All rights reserved.
 //
 
 import UIKit
 
-class ViewControllerDoctorProfile: UIViewController {
+class ViewControllerPatientEdit: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
     
@@ -38,20 +38,12 @@ class ViewControllerDoctorProfile: UIViewController {
     }
     
     @IBAction func imageTapped(sender: UITapGestureRecognizer) {
-        let newImageView = UIImageView(image: self.profilePicture.image)
-        newImageView.frame = self.view.frame
-        newImageView.backgroundColor = .blackColor()
-        newImageView.contentMode = .ScaleAspectFit
-        newImageView.userInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewControllerDoctorProfile.dismissFullscreenImage(_:)))
-        newImageView.addGestureRecognizer(tap)
-        self.view.addSubview(newImageView)
+         NSLog("tap")
     }
     
     func dismissFullscreenImage(sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
     }
-    
     
     /*
      // MARK: - Navigation

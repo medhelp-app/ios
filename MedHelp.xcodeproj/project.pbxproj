@@ -10,6 +10,7 @@
 		730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
 		73A0ED1A1CF22CB100193299 /* ViewControllerPatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A0ED191CF22CB100193299 /* ViewControllerPatientProfile.swift */; };
+		73A0ED231CF2ACFF00193299 /* ViewControllerPatientEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A0ED221CF2ACFF00193299 /* ViewControllerPatientEdit.swift */; };
 		73D504761CC4002300A3B1A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D504661CC3FFE400A3B1A9 /* Alamofire.framework */; };
 		73D504771CC4002A00A3B1A9 /* Alamofire.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 73D504661CC3FFE400A3B1A9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73D5047B1CC40A7E00A3B1A9 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5047A1CC40A7E00A3B1A9 /* Validator.swift */; };
@@ -114,6 +115,7 @@
 		730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorProfile.swift; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
 		73A0ED191CF22CB100193299 /* ViewControllerPatientProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPatientProfile.swift; sourceTree = "<group>"; };
+		73A0ED221CF2ACFF00193299 /* ViewControllerPatientEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPatientEdit.swift; sourceTree = "<group>"; };
 		73D5045B1CC3FFE400A3B1A9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-3.3.1/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		73D5047A1CC40A7E00A3B1A9 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = ../Validator.swift; sourceTree = "<group>"; };
 		73E5B4DE1CB971A7003C9435 /* MedHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +220,7 @@
 				732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */,
 				730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */,
 				73A0ED191CF22CB100193299 /* ViewControllerPatientProfile.swift */,
+				73A0ED221CF2ACFF00193299 /* ViewControllerPatientEdit.swift */,
 				73E5B4E51CB971A8003C9435 /* Main.storyboard */,
 				73E5B4EB1CB971A8003C9435 /* Assets.xcassets */,
 				73E5B4ED1CB971A8003C9435 /* LaunchScreen.storyboard */,
@@ -443,6 +446,7 @@
 				73E5B4E21CB971A8003C9435 /* AppDelegate.swift in Sources */,
 				73A0ED1A1CF22CB100193299 /* ViewControllerPatientProfile.swift in Sources */,
 				732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */,
+				73A0ED231CF2ACFF00193299 /* ViewControllerPatientEdit.swift in Sources */,
 				73D5047B1CC40A7E00A3B1A9 /* Validator.swift in Sources */,
 				73E5B4EA1CB971A8003C9435 /* MedHelp.xcdatamodeld in Sources */,
 				730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */,
