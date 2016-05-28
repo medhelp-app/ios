@@ -7,23 +7,102 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewControllerPatientProfile: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var nameTextField: UILabel!
+    @IBOutlet weak var emailTextField: UILabel!
+    @IBOutlet weak var streetTextField: UILabel!
+    @IBOutlet weak var zipCodeTextField: UILabel!
+    @IBOutlet weak var cityTextField: UILabel!
+    @IBOutlet weak var stateTextField: UILabel!
+    @IBOutlet weak var countryTextField: UILabel!
+    @IBOutlet weak var phoneTextField: UILabel!
     
-    var token : String = ""
-    var userType : String = ""
-    var id : String = ""
+    var name = ""
+    var email = ""
+    var street = ""
+    var zipCode = ""
+    var city = ""
+    var state = ""
+    var country = ""
+    var phone = ""
+    
+    func cleanFields() {
+        self.nameTextField.text = "Nome"
+        self.emailTextField.text = "Email"
+        self.streetTextField.text = "Endereço, número"
+        self.zipCodeTextField.text = "CEP"
+        self.cityTextField.text = "Cidade"
+        self.stateTextField.text = "Estado"
+        self.countryTextField.text = "País"
+        self.phoneTextField.text = "Número"
+    }
+    
+    func getPatientInfo() {
+        
+        let headers = [
+            "x-access-token": "\(LoginInfo.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/patients/\(LoginInfo.id)", headers: headers)
+            .responseJSON { response in
+                //debugPrint(response)
+                if let JSON = response.result.value {
+                    
+                    let dict = JSON as? NSDictionary
+                    
+                    let keyExists = dict!["error"] != nil
+                    
+                    if keyExists {
+                        print (keyExists)
+                    } else {
+                        self.name = (dict!["name"] as? String)!
+                        self.email = (dict!["email"] as? String)!
+                        self.street = (dict!["addressStreet"] as? String)!
+                        self.zipCode = (dict!["zipCode"] as? String)!
+                        self.city = (dict!["city"] as? String)!
+                        self.state = (dict!["state"] as? String)!
+                        self.country = (dict!["country"] as? String)!
+                        self.phone = (dict!["phone"] as? String)!
+                        
+                        self.fillFields()
+                    }
+                }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        cleanFields()
+        
+        getPatientInfo()
+        print("didload")
     }
     
     override func viewWillAppear(animated: Bool) {
         self.styleCircleForImage(self.profilePicture)
+        getPatientInfo()
+        print("willappear")
+    }
+    
+    func fillFields() {
+        nameTextField.text = self.name
+        emailTextField.text = self.email
+        streetTextField.text = self.street
+        zipCodeTextField.text = self.zipCode
+        cityTextField.text = self.city
+        stateTextField.text = self.state
+        countryTextField.text = self.country
+        phoneTextField.text = self.phone
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("didappear")
     }
     
     func styleCircleForImage(image:UIImageView) {
@@ -51,15 +130,4 @@ class ViewControllerPatientProfile: UIViewController {
     func dismissFullscreenImage(sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

@@ -12,10 +12,10 @@ import Alamofire
 class ViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
-    @IBOutlet weak var LoginField: UITextField!
-    @IBOutlet weak var PasswordField: UITextField!
-    @IBOutlet weak var DisplayMessage: UILabel!
-    @IBOutlet weak var Spinner: UIActivityIndicatorView!
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var displayMessage: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var token : String = ""
     var userType : String = ""
@@ -45,61 +45,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    func displayAlert(message: String) {
-        DisplayMessage.text = "*" + message
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "mainScreen" {
-            if self.userType == "0" {
-                if let destination = segue.destinationViewController as? ViewControllerPatientProfile {
-                    destination.token = self.token
-                    destination.userType = self.userType
-                    destination.id = self.id
-                }
-            } else {
-                if let destination = segue.destinationViewController as? ViewControllerDoctorProfile {
-                    destination.token = self.token
-                    destination.userType = self.userType
-                    destination.id = self.id
-                }
-            }
-        }
-    }
-    
     // MARK: Actions
+    
     @IBAction func Login(sender: UIButton) {
         
-        let login = LoginField.text!
-        let password = PasswordField.text!
-        
-        if (login == "patient" && password == "password") {
-            self.performSegueWithIdentifier("patientScreen", sender: self)
-            return
-        }
-        if (login == "doctor" && password == "password") {
-            self.performSegueWithIdentifier("doctorScreen", sender: self)
-            return
-        }
+        let login = loginField.text!
+        let password = passwordField.text!
         
         if login.isEmpty || password.isEmpty {
-            // display empty field alert
             
-            displayAlert("Todos os campos devem ser preenchidos")
+            DisplayMessages.displayAlert("Todos os campos devem ser preenchidos", textField: displayMessage)
             
             return
             
         } else if !Validator.validateEmail(login) {
-            // display email not valid
             
-            displayAlert("Email invalido")
+            DisplayMessages.displayAlert("Email invalido", textField: displayMessage)
             
             return
             
         } else {
-            self.Spinner.startAnimating()
-            Alamofire.request(.POST, "http://192.168.0.6:4000/api/users/login", parameters: ["email":login, "password":password]).responseJSON(completionHandler: { (response) -> Void in
-                self.Spinner.stopAnimating()
+            self.spinner.startAnimating()
+            Alamofire.request(.POST, "https://medhelp-app.herokuapp.com/api/users/login", parameters: ["email":login, "password":password]).responseJSON(completionHandler: { (response) -> Void in
+                self.spinner.stopAnimating()
                 if let JSON = response.result.value {
                     
                     let dict = JSON as? NSDictionary
@@ -107,18 +75,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     let keyExists = dict!["error"] != nil
                     
                     if keyExists {
-                        self.displayAlert("E-mail ou senha inválidos")
+                        DisplayMessages.displayAlert("E-mail ou senha inválidos", textField: self.displayMessage)
                     } else {
                         
                         print ("loging in")
                         let user = dict!["user"]  as? NSDictionary
                         
-                        self.token = dict!["token"] as! String
-                        self.userType = user!["userType"] as! String
-                        print (self.userType )
-                        self.id = user!["_id"] as! String
+                        LoginInfo.token = dict!["token"] as! String
+                        LoginInfo.id = user!["_id"] as! String
                         
-                        if (self.userType == "0") {
+                        if (user!["userType"] as! String == "0") {
                             self.performSegueWithIdentifier("patientScreen", sender: self)
                         } else {
                             self.performSegueWithIdentifier("doctorScreen", sender: self)
@@ -126,7 +92,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                     
                 } else {
-                    self.displayAlert("A aplicação não conseguiu acessar o servidor")
+                    DisplayMessages.displayAlert("A aplicação não conseguiu acessar o servidor", textField: self.displayMessage)
                 }
             })
         }

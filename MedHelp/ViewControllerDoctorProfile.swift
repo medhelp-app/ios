@@ -12,10 +12,6 @@ class ViewControllerDoctorProfile: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
     
-    var token : String = ""
-    var userType : String = ""
-    var id : String = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

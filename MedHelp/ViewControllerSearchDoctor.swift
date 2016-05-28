@@ -92,8 +92,8 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
         
         self.filteredDoctors = self.doctorsArray.filter({(doctor : DoctorItem) -> Bool in
           
-            var categoryMatch = (scope == "Title")
-            var stringMatch = doctor.name.rangeOfString(searchText)
+            let categoryMatch = (scope == "Title")
+            let stringMatch = doctor.name.rangeOfString(searchText)
             
             return categoryMatch && (stringMatch != nil)
             

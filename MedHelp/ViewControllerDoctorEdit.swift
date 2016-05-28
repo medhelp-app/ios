@@ -12,7 +12,6 @@ class ViewControllerDoctoEdit: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
     
-    var token : String = ""
     var userType : String = ""
     var id : String = ""
     
