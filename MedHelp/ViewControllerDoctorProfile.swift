@@ -7,19 +7,96 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewControllerDoctorProfile: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var nameTextField: UILabel!
+    @IBOutlet weak var emailTextField: UILabel!
+    @IBOutlet weak var crmNumberTextField: UILabel!
+    @IBOutlet weak var crmStateTextField: UILabel!
+    @IBOutlet weak var streetTextField: UILabel!
+    @IBOutlet weak var zipCodeTextField: UILabel!
+    @IBOutlet weak var cityTextField: UILabel!
+    @IBOutlet weak var stateTextField: UILabel!
+    @IBOutlet weak var countryTextField: UILabel!
+    @IBOutlet weak var phoneTextField: UILabel!
+    
+    var name = ""
+    var email = ""
+    var crmNumber = ""
+    var crmState = ""
+    var street = ""
+    var zipCode = ""
+    var city = ""
+    var state = ""
+    var country = ""
+    var phone = ""
+    
+    func getDoctorInfo() {
+        
+        let headers = [
+            "x-access-token": "\(LoginInfo.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/doctors/\(LoginInfo.id)", headers: headers)
+            .responseJSON { response in
+                //debugPrint(response)
+                if let JSON = response.result.value {
+                    
+                    let dict = JSON as? NSDictionary
+                    
+                    let keyExists = dict!["error"] != nil
+                    
+                    if keyExists {
+                        print (keyExists)
+                    } else {
+                        self.name = (dict!["name"] as? String)!
+                        self.email = (dict!["email"] as? String)!
+                        self.street = (dict!["addressStreet"] as? String)!
+                        self.zipCode = (dict!["zipCode"] as? String)!
+                        self.city = (dict!["city"] as? String)!
+                        self.state = (dict!["state"] as? String)!
+                        self.country = (dict!["country"] as? String)!
+                        self.phone = (dict!["phone"] as? String)!
+                        self.crmNumber = (dict!["crm"] as? String)!
+                        self.fillFields()
+                    }
+                }
+        }
+    }
+    
+    func fillFields() {
+        nameTextField.text = self.name != "" ? self.name : "Nome"
+        emailTextField.text = self.email != "" ? self.email : "Email"
+        streetTextField.text = self.street != "" ? self.street : "Endereço, número"
+        zipCodeTextField.text = self.zipCode != "" ? self.zipCode : "CEP"
+        cityTextField.text = self.city != "" ? self.city : "Cidade"
+        stateTextField.text = self.state != "" ? self.state : "Estado"
+        countryTextField.text = self.country != "" ? self.country : "País"
+        phoneTextField.text = self.phone != "" ? self.phone : "Número de Telefone"
+        crmNumberTextField.text = self.crmNumber != "" ? "CRM: \(self.crmNumber)" : "CRM: Número"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        getDoctorInfo()
+        print("phone: " + self.phone)
+        print("didload")
     }
     
     override func viewWillAppear(animated: Bool) {
         self.styleCircleForImage(self.profilePicture)
+        print("phone: " + self.phone)
+        print("willappear")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("phone: " + self.phone)
+        print("didappear")
     }
     
     func styleCircleForImage(image:UIImageView) {
@@ -47,16 +124,4 @@ class ViewControllerDoctorProfile: UIViewController {
     func dismissFullscreenImage(sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

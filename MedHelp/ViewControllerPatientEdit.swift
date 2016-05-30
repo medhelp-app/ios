@@ -128,8 +128,10 @@ class ViewControllerPatientEdit: UIViewController {
         
         if (name.isEmpty || email.isEmpty) {
             DisplayMessages.displayAlert("O campo do nome e de email devem ser preenchidos", textField: self.displayMessage)
+            return
         } else if (!Validator.validateEmail(email)) {
             DisplayMessages.displayAlert("Email inválido", textField: self.displayMessage)
+            return
         } else {
             
             let headers = [

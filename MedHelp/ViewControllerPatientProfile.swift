@@ -30,17 +30,6 @@ class ViewControllerPatientProfile: UIViewController {
     var country = ""
     var phone = ""
     
-    func cleanFields() {
-        self.nameTextField.text = "Nome"
-        self.emailTextField.text = "Email"
-        self.streetTextField.text = "Endereço, número"
-        self.zipCodeTextField.text = "CEP"
-        self.cityTextField.text = "Cidade"
-        self.stateTextField.text = "Estado"
-        self.countryTextField.text = "País"
-        self.phoneTextField.text = "Número"
-    }
-    
     func getPatientInfo() {
         
         let headers = [
@@ -68,40 +57,41 @@ class ViewControllerPatientProfile: UIViewController {
                         self.state = (dict!["state"] as? String)!
                         self.country = (dict!["country"] as? String)!
                         self.phone = (dict!["phone"] as? String)!
-                        
                         self.fillFields()
                     }
                 }
         }
     }
     
+    func fillFields() {
+        nameTextField.text = self.name != "" ? self.name : "Nome"
+        emailTextField.text = self.email != "" ? self.email : "Email"
+        streetTextField.text = self.street != "" ? self.street : "Endereço, número"
+        zipCodeTextField.text = self.zipCode != "" ? self.zipCode : "CEP"
+        cityTextField.text = self.city != "" ? self.city : "Cidade"
+        stateTextField.text = self.state != "" ? self.state : "Estado"
+        countryTextField.text = self.country != "" ? self.country : "País"
+        phoneTextField.text = self.phone != "" ? self.phone : "Número de Telefone"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cleanFields()
-        
         getPatientInfo()
+        print("nome: " + self.name)
         print("didload")
     }
     
     override func viewWillAppear(animated: Bool) {
         self.styleCircleForImage(self.profilePicture)
-        getPatientInfo()
+        print("nome: " + self.name)
         print("willappear")
     }
     
-    func fillFields() {
-        nameTextField.text = self.name
-        emailTextField.text = self.email
-        streetTextField.text = self.street
-        zipCodeTextField.text = self.zipCode
-        cityTextField.text = self.city
-        stateTextField.text = self.state
-        countryTextField.text = self.country
-        phoneTextField.text = self.phone
-    }
     
     override func viewDidAppear(animated: Bool) {
+        print("nome: " + self.name)
+        //self.fillFields()
         print("didappear")
     }
     

@@ -83,7 +83,7 @@ class ViewControllerSingUp: UIViewController {
         } else {
             displayAlert("");
             self.spinner.startAnimating()
-            Alamofire.request(.POST, "https://medhelp-app.herokuapp.com/api/users/", parameters: ["name":name, "email":email, "password":password, "rePassword":rePassword, "userType" : userType]).responseJSON(completionHandler: { (response) -> Void in
+            Alamofire.request(.POST, "https://medhelp-app.herokuapp.com/api/users/", parameters: ["name":name, "email":email, "password":SHA512.sha512(password), "rePassword":SHA512.sha512(rePassword), "userType" : userType]).responseJSON(completionHandler: { (response) -> Void in
                 
                 self.spinner.stopAnimating()
                 

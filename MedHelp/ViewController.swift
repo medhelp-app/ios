@@ -44,6 +44,45 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    /*
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier! == "patientScreen") {
+            let tabBarController = segue.destinationViewController as! UITabBarController
+            
+            let destination = tabBarController.viewControllers![0] as! ViewControllerPatientProfile
+            
+            let headers = [
+                "x-access-token": "\(LoginInfo.token)",
+                "Accept": "application/json"
+            ]
+            
+            Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/patients/\(LoginInfo.id)", headers: headers)
+                .responseJSON { response in
+                    //debugPrint(response)
+                    if let JSON = response.result.value {
+                        
+                        let dict = JSON as? NSDictionary
+                        
+                        let keyExists = dict!["error"] != nil
+                        
+                        if keyExists {
+                            print (keyExists)
+                        } else {
+                            destination.getPatientInfo()
+                            /*
+                            destination.nameTextField.text = (dict!["name"] as? String)!
+                            destination.emailTextField.text = (dict!["email"] as? String)!
+                            destination.streetTextField.text = (dict!["addressStreet"] as? String)!
+                            destination.zipCodeTextField.text = (dict!["zipCode"] as? String)!
+                            destination.cityTextField.text = (dict!["city"] as? String)!
+                            destination.stateTextField.text = (dict!["state"] as? String)!
+                            destination.countryTextField.text = (dict!["country"] as? String)!
+                            destination.phoneTextField.text = (dict!["phone"] as? String)!*/
+                        }
+                    }
+            }
+        }
+    }*/
     
     // MARK: Actions
     
@@ -66,7 +105,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             self.spinner.startAnimating()
-            Alamofire.request(.POST, "https://medhelp-app.herokuapp.com/api/users/login", parameters: ["email":login, "password":password]).responseJSON(completionHandler: { (response) -> Void in
+            Alamofire.request(.POST, "https://medhelp-app.herokuapp.com/api/users/login", parameters: ["email":login, "password":SHA512.sha512(password)]).responseJSON(completionHandler: { (response) -> Void in
                 self.spinner.stopAnimating()
                 if let JSON = response.result.value {
                     

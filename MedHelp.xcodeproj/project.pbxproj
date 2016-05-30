@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
+		734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; };
+		734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		736D53C11CF9028300AD47D2 /* ViewControllerDoctorEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */; };
 		736D53C91CF912D700AD47D2 /* ViewControllerSearchDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D53C81CF912D700AD47D2 /* ViewControllerSearchDoctor.swift */; };
 		736D53CC1CF9200800AD47D2 /* DoctorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D53CB1CF9200800AD47D2 /* DoctorItem.swift */; };
 		736D53CE1CF9B7C400AD47D2 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D53CD1CF9B7C400AD47D2 /* LoginInfo.swift */; };
 		736D53D01CF9BCFE00AD47D2 /* DisplayMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D53CF1CF9BCFE00AD47D2 /* DisplayMessages.swift */; };
+		736D53D21CFA5ED500AD47D2 /* SHA512.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D53D11CFA5ED500AD47D2 /* SHA512.swift */; };
 		73A0ED1A1CF22CB100193299 /* ViewControllerPatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A0ED191CF22CB100193299 /* ViewControllerPatientProfile.swift */; };
 		73A0ED231CF2ACFF00193299 /* ViewControllerPatientEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A0ED221CF2ACFF00193299 /* ViewControllerPatientEdit.swift */; };
 		73D504761CC4002300A3B1A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D504661CC3FFE400A3B1A9 /* Alamofire.framework */; };
@@ -30,6 +33,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		734862171CFBE0D800E82824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE45519693E190098E6F3;
+			remoteInfo = "CryptoSwift iOS";
+		};
+		734862191CFBE0D800E82824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5596BDBB1BC8F220007E38D5;
+			remoteInfo = "CryptoSwift watchOS";
+		};
+		7348621B1CFBE0D800E82824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75DF77721BC8EB59006E9520;
+			remoteInfo = "CryptoSwift OSX";
+		};
+		7348621D1CFBE0D800E82824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75D614BF1BD844F2001358B2;
+			remoteInfo = "CryptoSwift tvOS";
+		};
+		7348621F1CFBE0D800E82824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE46019693E190098E6F3;
+			remoteInfo = CryptoSwiftTests;
+		};
+		734862211CFBE0EE00E82824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 754BE45419693E190098E6F3;
+			remoteInfo = "CryptoSwift iOS";
+		};
 		73D504651CC3FFE400A3B1A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73D5045B1CC3FFE400A3B1A9 /* Alamofire.xcodeproj */;
@@ -109,6 +154,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */,
 				73D504771CC4002A00A3B1A9 /* Alamofire.framework in Embed Framwork */,
 			);
 			name = "Embed Framwork";
@@ -119,15 +165,17 @@
 /* Begin PBXFileReference section */
 		730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorProfile.swift; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
+		734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorEdit.swift; sourceTree = "<group>"; };
 		736D53C81CF912D700AD47D2 /* ViewControllerSearchDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSearchDoctor.swift; sourceTree = "<group>"; };
 		736D53CB1CF9200800AD47D2 /* DoctorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorItem.swift; sourceTree = "<group>"; };
 		736D53CD1CF9B7C400AD47D2 /* LoginInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
 		736D53CF1CF9BCFE00AD47D2 /* DisplayMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayMessages.swift; sourceTree = "<group>"; };
+		736D53D11CFA5ED500AD47D2 /* SHA512.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA512.swift; sourceTree = "<group>"; };
 		73A0ED191CF22CB100193299 /* ViewControllerPatientProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPatientProfile.swift; sourceTree = "<group>"; };
 		73A0ED221CF2ACFF00193299 /* ViewControllerPatientEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPatientEdit.swift; sourceTree = "<group>"; };
 		73D5045B1CC3FFE400A3B1A9 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-3.3.1/Alamofire.xcodeproj"; sourceTree = "<group>"; };
-		73D5047A1CC40A7E00A3B1A9 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = ../Validator.swift; sourceTree = "<group>"; };
+		73D5047A1CC40A7E00A3B1A9 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		73E5B4DE1CB971A7003C9435 /* MedHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E5B4E11CB971A8003C9435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73E5B4E31CB971A8003C9435 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */,
 				73D504761CC4002300A3B1A9 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +224,18 @@
 			children = (
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		7348620A1CFBE0CF00E82824 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				734862181CFBE0D800E82824 /* CryptoSwift.framework */,
+				7348621A1CFBE0D800E82824 /* CryptoSwift.framework */,
+				7348621C1CFBE0D800E82824 /* CryptoSwift.framework */,
+				7348621E1CFBE0D800E82824 /* CryptoSwift.framework */,
+				734862201CFBE0D800E82824 /* CryptoSwiftTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		736D53CA1CF91E8700AD47D2 /* ViewControllers */ = {
@@ -211,6 +272,7 @@
 				73D5047A1CC40A7E00A3B1A9 /* Validator.swift */,
 				736D53CD1CF9B7C400AD47D2 /* LoginInfo.swift */,
 				736D53CF1CF9BCFE00AD47D2 /* DisplayMessages.swift */,
+				736D53D11CFA5ED500AD47D2 /* SHA512.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -219,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				73D5045B1CC3FFE400A3B1A9 /* Alamofire.xcodeproj */,
+				734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */,
 				73E5B4E01CB971A8003C9435 /* MedHelp */,
 				73E5B4F81CB971A8003C9435 /* MedHelpTests */,
 				73E5B5031CB971A8003C9435 /* MedHelpUITests */,
@@ -286,6 +349,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				734862221CFBE0EE00E82824 /* PBXTargetDependency */,
 				73D504741CC4001300A3B1A9 /* PBXTargetDependency */,
 			);
 			name = MedHelp;
@@ -371,6 +435,10 @@
 					ProductGroup = 73D5045C1CC3FFE400A3B1A9 /* Products */;
 					ProjectRef = 73D5045B1CC3FFE400A3B1A9 /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = 7348620A1CFBE0CF00E82824 /* Products */;
+					ProjectRef = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -382,6 +450,41 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		734862181CFBE0D800E82824 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = 734862171CFBE0D800E82824 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7348621A1CFBE0D800E82824 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = 734862191CFBE0D800E82824 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7348621C1CFBE0D800E82824 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = 7348621B1CFBE0D800E82824 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7348621E1CFBE0D800E82824 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = 7348621D1CFBE0D800E82824 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		734862201CFBE0D800E82824 /* CryptoSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CryptoSwiftTests.xctest;
+			remoteRef = 7348621F1CFBE0D800E82824 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		73D504661CC3FFE400A3B1A9 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -478,6 +581,7 @@
 				736D53CC1CF9200800AD47D2 /* DoctorItem.swift in Sources */,
 				730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */,
 				736D53C91CF912D700AD47D2 /* ViewControllerSearchDoctor.swift in Sources */,
+				736D53D21CFA5ED500AD47D2 /* SHA512.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +604,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		734862221CFBE0EE00E82824 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CryptoSwift iOS";
+			targetProxy = 734862211CFBE0EE00E82824 /* PBXContainerItemProxy */;
+		};
 		73D504741CC4001300A3B1A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
