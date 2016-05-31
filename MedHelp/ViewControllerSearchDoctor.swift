@@ -7,32 +7,67 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var doctorsArray = [DoctorItem]()
     var filteredDoctors = [DoctorItem]()
+    var doctorsName = [String]()
+    var sendName = ""
+    
+    func getSuggestions() {
+        let headers = [
+            "x-access-token": "\(LoginInfo.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/doctors/find/suggestions", headers: headers)
+            .responseJSON { response in
+                //debugPrint(response)
+                if let JSON = response.result.value {
+                    let array = JSON as? NSArray
+                    self.doctorsName = [String]()
+                    print("array \(array?.count)")
+                    for n in 0...(array!.count - 2) {
+                        print(array![n] as! String)
+                        self.doctorsName += [array![n] as! String]
+                    }
+                    print(self.doctorsName.count)
+                    self.fillTable()
+                }
+        }
+    }
+    
+    func fillTable() {
+        if (self.doctorsName.count > 0) {
+            for i in 0...(self.doctorsName.count - 1) {
+                doctorsArray += [DoctorItem(name : self.doctorsName[i], specialty: "Especialidade")]
+            }
+        }
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doctorsArray += [DoctorItem(name : "Luiza Menezes", specialty: "Ginecologista Obstetra")]
-        doctorsArray += [DoctorItem(name : "Luiza Cabral", specialty: "Demartologista")]
-        doctorsArray += [DoctorItem(name : "Luiza Bezerra", specialty: "Cardiologista")]
-        doctorsArray += [DoctorItem(name : "Carlos Rodrigo", specialty: "Dentista")]
-        doctorsArray += [DoctorItem(name : "Carlos Garcia", specialty: "Clinico Geral")]
-        doctorsArray += [DoctorItem(name : "Daniel Franca", specialty: "Dentista")]
-        doctorsArray += [DoctorItem(name : "Charles de Oliveira", specialty: "Ginecologista Obstetra")]
-        
-        self.tableView.reloadData()
-        
+        getSuggestions()
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier! == "patientScreen") {
+            let tabBarController = segue.destinationViewController as! UITabBarController
+            
+            let destination = tabBarController.viewControllers![0] as! ViewControllerDisplayDoctor
+            
+            destination.name = self.sendName
+        }
     }
     
     
@@ -83,7 +118,8 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
             
         }
         
-        print (doctor.name)
+        self.sendName = doctor.name
+        self.performSegueWithIdentifier("displayDoctor", sender: self)
     }
     
     // Mark - Search

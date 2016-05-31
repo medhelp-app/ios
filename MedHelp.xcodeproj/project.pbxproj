@@ -30,6 +30,7 @@
 		73E5B4EF1CB971A8003C9435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E5B4ED1CB971A8003C9435 /* LaunchScreen.storyboard */; };
 		73E5B4FA1CB971A8003C9435 /* MedHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E5B4F91CB971A8003C9435 /* MedHelpTests.swift */; };
 		73E5B5051CB971A8003C9435 /* MedHelpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E5B5041CB971A8003C9435 /* MedHelpUITests.swift */; };
+		73E7D9451CFD37A100AFAB3D /* ViewControllerDisplayDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E7D9441CFD37A100AFAB3D /* ViewControllerDisplayDoctor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,7 @@
 		73E5B5001CB971A8003C9435 /* MedHelpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedHelpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E5B5041CB971A8003C9435 /* MedHelpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedHelpUITests.swift; sourceTree = "<group>"; };
 		73E5B5061CB971A8003C9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73E7D9441CFD37A100AFAB3D /* ViewControllerDisplayDoctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDisplayDoctor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				73A0ED221CF2ACFF00193299 /* ViewControllerPatientEdit.swift */,
 				736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */,
 				736D53C81CF912D700AD47D2 /* ViewControllerSearchDoctor.swift */,
+				73E7D9441CFD37A100AFAB3D /* ViewControllerDisplayDoctor.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				73A0ED1A1CF22CB100193299 /* ViewControllerPatientProfile.swift in Sources */,
 				736D53D01CF9BCFE00AD47D2 /* DisplayMessages.swift in Sources */,
 				736D53CE1CF9B7C400AD47D2 /* LoginInfo.swift in Sources */,
+				73E7D9451CFD37A100AFAB3D /* ViewControllerDisplayDoctor.swift in Sources */,
 				732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */,
 				736D53C11CF9028300AD47D2 /* ViewControllerDoctorEdit.swift in Sources */,
 				73A0ED231CF2ACFF00193299 /* ViewControllerPatientEdit.swift in Sources */,
