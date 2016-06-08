@@ -45,7 +45,7 @@ class ViewControllerDoctorProfile: UIViewController {
             .responseJSON { response in
                 //debugPrint(response)
                 if let JSON = response.result.value {
-                    
+                    print(JSON)
                     let dict = JSON as? NSDictionary
                     
                     let keyExists = dict!["error"] != nil
@@ -62,6 +62,9 @@ class ViewControllerDoctorProfile: UIViewController {
                         self.country = (dict!["country"] as? String)!
                         self.phone = (dict!["phone"] as? String)!
                         self.crmNumber = (dict!["crm"] as? String)!
+                        if (dict!["ufCrm"] != nil) {
+                            self.crmState = (dict!["ufCrm"] as? String)!
+                        }
                         self.fillFields()
                     }
                 }
@@ -78,6 +81,7 @@ class ViewControllerDoctorProfile: UIViewController {
         countryTextField.text = self.country != "" ? self.country : "País"
         phoneTextField.text = self.phone != "" ? self.phone : "Número de Telefone"
         crmNumberTextField.text = self.crmNumber != "" ? "CRM: \(self.crmNumber)" : "CRM: Número"
+        crmStateTextField.text = self.crmState != "" ? "UF: \(self.crmState)" : "UF: Estado"
     }
     
     override func viewDidLoad() {

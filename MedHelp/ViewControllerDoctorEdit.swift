@@ -9,9 +9,9 @@
 import UIKit
 import Alamofire
 
-class ViewControllerDoctoEdit: UIViewController {
+class ViewControllerDoctoEdit: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet var profilePicture: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var crmNumberTextField: UITextField!
@@ -23,6 +23,8 @@ class ViewControllerDoctoEdit: UIViewController {
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var displayMessage: UILabel!
+    
+    let imagePicker = UIImagePickerController()
     
     var name = ""
     var email = ""
@@ -63,6 +65,9 @@ class ViewControllerDoctoEdit: UIViewController {
                         self.country = (dict!["country"] as? String)!
                         self.phone = (dict!["phone"] as? String)!
                         self.crmNumber = (dict!["crm"] as? String)!
+                        if (dict!["ufCrm"] != nil) {
+                            self.crmState = (dict!["ufCrm"] as? String)!
+                        }
                         self.fillFields()
                     }
                 }
@@ -79,10 +84,13 @@ class ViewControllerDoctoEdit: UIViewController {
         countryTextField.text = self.country
         phoneTextField.text = self.phone
         crmNumberTextField.text = self.crmNumber
+        crmStateTextField.text = self.crmState
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.imagePicker.delegate = self
         
         getDoctorInfo()
     }
@@ -158,4 +166,23 @@ class ViewControllerDoctoEdit: UIViewController {
         }
     }
     
+    @IBAction func loadImage(sender: AnyObject) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.profilePicture.contentMode = .ScaleAspectFit
+            self.profilePicture.image = pickedImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
