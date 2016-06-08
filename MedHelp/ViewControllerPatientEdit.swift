@@ -33,6 +33,7 @@ class ViewControllerPatientEdit: UIViewController, UIImagePickerControllerDelega
     var state = ""
     var country = ""
     var phone = ""
+    var image = ""
     
     func getPatientInfo() {
         
@@ -65,6 +66,30 @@ class ViewControllerPatientEdit: UIViewController, UIImagePickerControllerDelega
                     }
                 }
         }
+        
+        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/patients/\(LoginInfo.id)/image", headers: headers)
+            .responseJSON { response in
+                //debugPrint(response)
+                if let JSON = response.result.value {
+                    
+                    let dict = JSON as? NSDictionary
+                    
+                    let keyExists = dict!["error"] != nil
+                    
+                    if keyExists {
+                        print (keyExists)
+                    } else {
+                        let img = (dict!["profileImage"] as? String)!
+                        if (img != "") {
+                            print ("load new image")
+                            self.profilePicture.image = ImageDecoder.decode(img)
+                            self.image = img
+                            print ("igual")
+                            print(ImageEncoder.encoder(self.profilePicture.image!) == img)
+                        }
+                    }
+                }
+        }
     }
     
     override func viewDidLoad() {
@@ -73,6 +98,8 @@ class ViewControllerPatientEdit: UIViewController, UIImagePickerControllerDelega
         self.imagePicker.delegate = self
         
         getPatientInfo()
+        
+        self.image = ImageEncoder.encoder(self.profilePicture.image!)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -143,6 +170,34 @@ class ViewControllerPatientEdit: UIViewController, UIImagePickerControllerDelega
                 "Accept": "application/json"
             ]
             
+            let img = ImageEncoder.encoder(self.profilePicture.image!)
+            
+            if (image != img) {
+                
+                
+                // print ("here is an image \(img)")
+                
+                print("is it heeere?   ")
+                Alamofire.request(.PUT, "https://medhelp-app.herokuapp.com/api/doctors/\(LoginInfo.id)/image", headers: headers, parameters : ["profileImage" : img])
+                    .responseJSON { response in
+                        //debugPrint(response)
+                        print (response)
+                        if let JSON = response.result.value {
+                            print("Whaat?" + (JSON as! String) as String)
+                            let dict = JSON as? NSDictionary
+                            
+                            let keyExists = dict!["error"] != nil
+                            
+                            if keyExists {
+                                print (keyExists)
+                            } else {
+                                
+                            }
+                        }
+                }
+            }
+            
+            
             Alamofire.request(.PUT, "https://medhelp-app.herokuapp.com/api/patients/\(LoginInfo.id)", headers: headers, parameters : ["profileImage" : "", "name" : name,
                 "email" : email, "addressStreet" : street, "addressNumber" : "", "zipCode" : zipCode, "city" : city,
                 "state" : state, "country" : country, "phone" : phone])
@@ -162,6 +217,7 @@ class ViewControllerPatientEdit: UIViewController, UIImagePickerControllerDelega
                     }
             }
         }
+        
     }
     
     

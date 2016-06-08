@@ -61,6 +61,26 @@ class ViewControllerPatientProfile: UIViewController {
                     }
                 }
         }
+        
+        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/patients/\(LoginInfo.id)/image", headers: headers)
+            .responseJSON { response in
+                //debugPrint(response)
+                if let JSON = response.result.value {
+                    
+                    let dict = JSON as? NSDictionary
+                    
+                    let keyExists = dict!["error"] != nil
+                    
+                    if keyExists {
+                        print (keyExists)
+                    } else {
+                        let img = (dict!["profileImage"] as? String)!
+                        if (img != "") {
+                            self.profilePicture.image = ImageDecoder.decode(img)
+                        }
+                    }
+                }
+        }
     }
     
     func fillFields() {
