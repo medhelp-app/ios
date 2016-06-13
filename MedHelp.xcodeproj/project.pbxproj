@@ -22,6 +22,7 @@
 		732D61461D0E124500ECFF6D /* ViewControllerAddProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61451D0E124500ECFF6D /* ViewControllerAddProblem.swift */; };
 		732D61481D0E18C000ECFF6D /* ViewControllerDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */; };
 		732D614A1D0E542A00ECFF6D /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61491D0E542A00ECFF6D /* URLHelper.swift */; };
+		732D614E1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
 		734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; };
 		734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -193,6 +194,7 @@
 		732D61451D0E124500ECFF6D /* ViewControllerAddProblem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAddProblem.swift; sourceTree = "<group>"; };
 		732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDropdown.swift; sourceTree = "<group>"; };
 		732D61491D0E542A00ECFF6D /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
+		732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDatePicker.swift; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
 		734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorEdit.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				732D613B1D0DC17700ECFF6D /* ViewControllerProblemsPopUp.swift */,
 				732D61451D0E124500ECFF6D /* ViewControllerAddProblem.swift */,
 				732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */,
+				732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				736D53CE1CF9B7C400AD47D2 /* LoginInfo.swift in Sources */,
 				73E7D9451CFD37A100AFAB3D /* ViewControllerDisplayDoctor.swift in Sources */,
 				732D61181D07F65300ECFF6D /* ImageDecoder.swift in Sources */,
+				732D614E1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift in Sources */,
 				732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */,
 				736D53C11CF9028300AD47D2 /* ViewControllerDoctorEdit.swift in Sources */,
 				732D61461D0E124500ECFF6D /* ViewControllerAddProblem.swift in Sources */,

@@ -15,18 +15,27 @@ class ViewControllerAddProblem: UIViewController, UIPopoverPresentationControlle
     var width : CGFloat = 0
     var height : CGFloat = 0
 
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var bodyPartLabel: UILabel!
     @IBOutlet weak var problemTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var severitySelector: UISegmentedControl!
     
     var selectedItem = ""
+    var dateStamp = NSDate()
+    let dateFormatter = NSDateFormatter()
     
     var controller : ViewControllerPatientBody = ViewControllerPatientBody()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        self.dateFormatter.dateStyle = .ShortStyle
+        
+        self.dateLabel.text = self.dateFormatter.stringFromDate(NSDate())
+        
         self.preferredContentSize = CGSizeMake(self.width, self.height);
     }
     
@@ -56,12 +65,29 @@ class ViewControllerAddProblem: UIViewController, UIPopoverPresentationControlle
             let destination = vc as! ViewControllerDropdown
             destination.items = Array(ProblemsHelper.bodyPart.keys)
             destination.controller = self
+        } else if segue.identifier == "datePicker" {
+            let vc = segue.destinationViewController
+            
+            let controller = vc.popoverPresentationController
+            
+            if controller != nil {
+                controller?.delegate = self
+            }
+            
+            let destination = vc as! ViewControllerDatePicker
+            destination.controller = self
+            destination.dateStamp = self.dateStamp
+
         }
     }
     
 
     @IBAction func openDropdown(sender: AnyObject) {
         self.performSegueWithIdentifier("dropdown", sender: self)
+    }
+    
+    @IBAction func openDatePicker(sender: AnyObject) {
+        self.performSegueWithIdentifier("datePicker", sender: self)
     }
     
     @IBAction func addProblem(sender: AnyObject) {
@@ -85,10 +111,11 @@ class ViewControllerAddProblem: UIViewController, UIPopoverPresentationControlle
             "Accept": "application/json"
         ]
         
-        Alamofire.request(.POST, URLHelper.addPatientBodyPartProblem(), headers: headers, parameters: ["part" : ProblemsHelper.bodyPart[part]!, "problem": problemType, "description": description, "severity": severity, "occurredDate": NSDate()])
+        Alamofire.request(.POST, URLHelper.addPatientBodyPartProblem(), headers: headers, parameters: ["part" : ProblemsHelper.bodyPart[part]!, "problem": problemType, "description": description, "severity": severity, "occurredDate": self.dateStamp])
             .responseJSON { response in
 
                 if let JSON = response.result.value {
+                    print(JSON)
                     self.controller.loadBodyInfo()
                     self.dismissViewControllerAnimated(false, completion: nil);
                 }

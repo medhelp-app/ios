@@ -161,7 +161,7 @@ class ViewControllerPatientBody: UIViewController, UIPopoverPresentationControll
             
             let destination = vc as! ViewControllerAddProblem
             destination.width = self.screenSize.width
-            destination.height = 300
+            destination.height = 350
             destination.controller = self
         }
     }
