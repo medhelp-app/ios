@@ -31,8 +31,11 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
                     self.doctorsName = [String]()
                     print("array \(array?.count)")
                     for n in 0...(array!.count - 2) {
-                        print(array![n] as! String)
-                        self.doctorsName += [array![n] as! String]
+                        if (array![n] !== NSNull()) {
+                            print(array![n])
+                            print(array![n] as! String)
+                            self.doctorsName += [array![n] as! String]
+                       }
                     }
                     print(self.doctorsName.count)
                     self.fillTable()

@@ -57,6 +57,7 @@ class ViewControllerPatientProfile: UIViewController {
                         self.state = (dict!["state"] as? String)!
                         self.country = (dict!["country"] as? String)!
                         self.phone = (dict!["phone"] as? String)!
+                        
                         self.fillFields()
                     }
                 }

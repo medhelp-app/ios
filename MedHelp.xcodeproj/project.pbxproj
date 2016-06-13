@@ -9,8 +9,19 @@
 /* Begin PBXBuildFile section */
 		730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */; };
 		732D61181D07F65300ECFF6D /* ImageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61171D07F65300ECFF6D /* ImageDecoder.swift */; };
-		732D61241D07F81400ECFF6D /* ImageEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61231D07F81400ECFF6D /* ImageEncoder.swift */; };
 		732D61261D08029800ECFF6D /* ImageCompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61251D08029800ECFF6D /* ImageCompress.swift */; };
+		732D612A1D0CBD7800ECFF6D /* ViewControllerPatientBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61291D0CBD7800ECFF6D /* ViewControllerPatientBody.swift */; };
+		732D61361D0CFE3E00ECFF6D /* ImageEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61351D0CFE3E00ECFF6D /* ImageEncoder.swift */; };
+		732D61381D0D22EE00ECFF6D /* ScreenSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61371D0D22EE00ECFF6D /* ScreenSizes.swift */; };
+		732D613A1D0DACC300ECFF6D /* ProblemsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61391D0DACC300ECFF6D /* ProblemsHelper.swift */; };
+		732D613C1D0DC17700ECFF6D /* ViewControllerProblemsPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D613B1D0DC17700ECFF6D /* ViewControllerProblemsPopUp.swift */; };
+		732D613E1D0DF98D00ECFF6D /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D613D1D0DF98D00ECFF6D /* Problem.swift */; };
+		732D61401D0DF9C200ECFF6D /* PatientBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D613F1D0DF9C200ECFF6D /* PatientBody.swift */; };
+		732D61421D0E012000ECFF6D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61411D0E012000ECFF6D /* User.swift */; };
+		732D61441D0E014800ECFF6D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61431D0E014800ECFF6D /* Patient.swift */; };
+		732D61461D0E124500ECFF6D /* ViewControllerAddProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61451D0E124500ECFF6D /* ViewControllerAddProblem.swift */; };
+		732D61481D0E18C000ECFF6D /* ViewControllerDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */; };
+		732D614A1D0E542A00ECFF6D /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61491D0E542A00ECFF6D /* URLHelper.swift */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
 		734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; };
 		734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -169,8 +180,19 @@
 /* Begin PBXFileReference section */
 		730075011CE96E3A003313C1 /* ViewControllerDoctorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorProfile.swift; sourceTree = "<group>"; };
 		732D61171D07F65300ECFF6D /* ImageDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDecoder.swift; sourceTree = "<group>"; };
-		732D61231D07F81400ECFF6D /* ImageEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEncoder.swift; sourceTree = "<group>"; };
 		732D61251D08029800ECFF6D /* ImageCompress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCompress.swift; sourceTree = "<group>"; };
+		732D61291D0CBD7800ECFF6D /* ViewControllerPatientBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPatientBody.swift; sourceTree = "<group>"; };
+		732D61351D0CFE3E00ECFF6D /* ImageEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEncoder.swift; sourceTree = "<group>"; };
+		732D61371D0D22EE00ECFF6D /* ScreenSizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSizes.swift; sourceTree = "<group>"; };
+		732D61391D0DACC300ECFF6D /* ProblemsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemsHelper.swift; sourceTree = "<group>"; };
+		732D613B1D0DC17700ECFF6D /* ViewControllerProblemsPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerProblemsPopUp.swift; sourceTree = "<group>"; };
+		732D613D1D0DF98D00ECFF6D /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		732D613F1D0DF9C200ECFF6D /* PatientBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientBody.swift; sourceTree = "<group>"; };
+		732D61411D0E012000ECFF6D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		732D61431D0E014800ECFF6D /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		732D61451D0E124500ECFF6D /* ViewControllerAddProblem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAddProblem.swift; sourceTree = "<group>"; };
+		732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDropdown.swift; sourceTree = "<group>"; };
+		732D61491D0E542A00ECFF6D /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
 		734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorEdit.swift; sourceTree = "<group>"; };
@@ -230,6 +252,11 @@
 		730074F81CE94F45003313C1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				736D53CD1CF9B7C400AD47D2 /* LoginInfo.swift */,
+				732D613D1D0DF98D00ECFF6D /* Problem.swift */,
+				732D613F1D0DF9C200ECFF6D /* PatientBody.swift */,
+				732D61411D0E012000ECFF6D /* User.swift */,
+				732D61431D0E014800ECFF6D /* Patient.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -257,6 +284,10 @@
 				736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */,
 				736D53C81CF912D700AD47D2 /* ViewControllerSearchDoctor.swift */,
 				73E7D9441CFD37A100AFAB3D /* ViewControllerDisplayDoctor.swift */,
+				732D61291D0CBD7800ECFF6D /* ViewControllerPatientBody.swift */,
+				732D613B1D0DC17700ECFF6D /* ViewControllerProblemsPopUp.swift */,
+				732D61451D0E124500ECFF6D /* ViewControllerAddProblem.swift */,
+				732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -278,13 +309,15 @@
 		73D5047C1CC40AD900A3B1A9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				732D61351D0CFE3E00ECFF6D /* ImageEncoder.swift */,
 				73D5047A1CC40A7E00A3B1A9 /* Validator.swift */,
-				736D53CD1CF9B7C400AD47D2 /* LoginInfo.swift */,
 				736D53CF1CF9BCFE00AD47D2 /* DisplayMessages.swift */,
 				736D53D11CFA5ED500AD47D2 /* SHA512.swift */,
 				732D61171D07F65300ECFF6D /* ImageDecoder.swift */,
-				732D61231D07F81400ECFF6D /* ImageEncoder.swift */,
 				732D61251D08029800ECFF6D /* ImageCompress.swift */,
+				732D61371D0D22EE00ECFF6D /* ScreenSizes.swift */,
+				732D61391D0DACC300ECFF6D /* ProblemsHelper.swift */,
+				732D61491D0E542A00ECFF6D /* URLHelper.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -581,22 +614,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				73E5B4E41CB971A8003C9435 /* ViewController.swift in Sources */,
+				732D613C1D0DC17700ECFF6D /* ViewControllerProblemsPopUp.swift in Sources */,
 				73E5B4E21CB971A8003C9435 /* AppDelegate.swift in Sources */,
+				732D61441D0E014800ECFF6D /* Patient.swift in Sources */,
+				732D61421D0E012000ECFF6D /* User.swift in Sources */,
+				732D61381D0D22EE00ECFF6D /* ScreenSizes.swift in Sources */,
 				73A0ED1A1CF22CB100193299 /* ViewControllerPatientProfile.swift in Sources */,
+				732D61481D0E18C000ECFF6D /* ViewControllerDropdown.swift in Sources */,
 				736D53D01CF9BCFE00AD47D2 /* DisplayMessages.swift in Sources */,
 				736D53CE1CF9B7C400AD47D2 /* LoginInfo.swift in Sources */,
 				73E7D9451CFD37A100AFAB3D /* ViewControllerDisplayDoctor.swift in Sources */,
 				732D61181D07F65300ECFF6D /* ImageDecoder.swift in Sources */,
-				732D61241D07F81400ECFF6D /* ImageEncoder.swift in Sources */,
 				732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */,
 				736D53C11CF9028300AD47D2 /* ViewControllerDoctorEdit.swift in Sources */,
+				732D61461D0E124500ECFF6D /* ViewControllerAddProblem.swift in Sources */,
 				73A0ED231CF2ACFF00193299 /* ViewControllerPatientEdit.swift in Sources */,
 				73D5047B1CC40A7E00A3B1A9 /* Validator.swift in Sources */,
 				73E5B4EA1CB971A8003C9435 /* MedHelp.xcdatamodeld in Sources */,
 				736D53CC1CF9200800AD47D2 /* DoctorItem.swift in Sources */,
+				732D61401D0DF9C200ECFF6D /* PatientBody.swift in Sources */,
 				730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */,
 				736D53C91CF912D700AD47D2 /* ViewControllerSearchDoctor.swift in Sources */,
+				732D613A1D0DACC300ECFF6D /* ProblemsHelper.swift in Sources */,
 				736D53D21CFA5ED500AD47D2 /* SHA512.swift in Sources */,
+				732D61361D0CFE3E00ECFF6D /* ImageEncoder.swift in Sources */,
+				732D613E1D0DF98D00ECFF6D /* Problem.swift in Sources */,
+				732D612A1D0CBD7800ECFF6D /* ViewControllerPatientBody.swift in Sources */,
+				732D614A1D0E542A00ECFF6D /* URLHelper.swift in Sources */,
 				732D61261D08029800ECFF6D /* ImageCompress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

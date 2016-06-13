@@ -172,34 +172,6 @@ class ViewControllerDoctoEdit: UIViewController, UIImagePickerControllerDelegate
                 "Accept": "application/json"
             ]
             
-            let img = ImageEncoder.encoder(self.profilePicture.image!)
-            
-            if (image != img) {
-                
-                
-               // print ("here is an image \(img)")
-                
-                print("is it heeere?   ")
-                Alamofire.request(.PUT, "https://medhelp-app.herokuapp.com/api/doctors/\(LoginInfo.id)/image", headers: headers, parameters : ["profileImage" : img])
-                    .responseJSON { response in
-                        //debugPrint(response)
-                        print (response)
-                        if let JSON = response.result.value {
-                            print("Whaat?" + (JSON as! String) as String)
-                            let dict = JSON as? NSDictionary
-                            
-                            let keyExists = dict!["error"] != nil
-                            
-                            if keyExists {
-                                print (keyExists)
-                            } else {
-                                
-                            }
-                        }
-                }
-            }
-            
-            
             Alamofire.request(.PUT, "https://medhelp-app.herokuapp.com/api/doctors/\(LoginInfo.id)", headers: headers, parameters : ["profileImage" : "", "name" : name,
                 "email" : email, "addressStreet" : street, "addressNumber" : "", "zipCode" : zipCode, "city" : city,
                 "state" : state, "country" : country, "phone" : phone, "crm" : crmNumber, "ufCrm" : crmState])
@@ -214,10 +186,40 @@ class ViewControllerDoctoEdit: UIViewController, UIImagePickerControllerDelegate
                         if keyExists {
                             DisplayMessages.displayAlert("\(keyExists)", textField: self.displayMessage)
                         } else {
-                            self.performSegueWithIdentifier("doctorScreen", sender: self)
+                            
                         }
                     }
             }
+            
+            
+            let img = ImageEncoder.encoder(self.profilePicture.image!)
+            
+            if (image != img) {
+                
+                print("is it heeere?   ")
+                
+                Alamofire.upload(
+                    .PUT,
+                    "https://medhelp-app.herokuapp.com/api/doctors/\(LoginInfo.id)/image", headers: headers,
+                    multipartFormData: { multipartFormData in
+                        if let imageData = UIImageJPEGRepresentation(self.profilePicture.image!, 0.25) {
+                            multipartFormData.appendBodyPart(data: imageData, name: "profileImage", fileName: "file.png", mimeType: "image/png")
+                        }
+                        
+                    },
+                    encodingCompletion: { encodingResult in
+                        switch encodingResult {
+                        case .Success(let upload, _, _):
+                            upload.responseJSON { response in
+                                debugPrint(response)
+                            }
+                        case .Failure(let encodingError):
+                            print(encodingError)
+                        }
+                    }
+                )
+            }
+            self.performSegueWithIdentifier("doctorScreen", sender: self)
         }
     }
     

@@ -14,7 +14,7 @@ class ImageEncoder {
     static func encoder(img : UIImage) -> String {
         
         let imageData : NSData = UIImagePNGRepresentation(img)!
-               
+        
         return imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
     }
 }
