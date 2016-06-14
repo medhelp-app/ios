@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 import Alamofire
+import Cosmos
 
 class ViewControllerDisplayDoctor: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var averageRating: CosmosView!
     
     var doctorItem = DoctorItem()
     

@@ -5,11 +5,13 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "C3D8ED1CB28D809ADCE2C0DE74935E8A502ACD53" : 0,
+    "7FFE592FB1F484C32773B2291AE53D1E64B768B5" : 0,
     "46DB4037C7332E06160E392B222A3CF79A686C9C" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CA79224E-343C-4C47-9FE3-8086FB1CC982",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "C3D8ED1CB28D809ADCE2C0DE74935E8A502ACD53" : "ios\/CryptoSwift\/",
+    "7FFE592FB1F484C32773B2291AE53D1E64B768B5" : "ios\/Cosmos\/",
     "46DB4037C7332E06160E392B222A3CF79A686C9C" : "ios\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "MedHelp",
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/medhelp-app\/ios.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "46DB4037C7332E06160E392B222A3CF79A686C9C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/marketplacer\/Cosmos.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7FFE592FB1F484C32773B2291AE53D1E64B768B5"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/krzyzanowskim\/CryptoSwift.git",

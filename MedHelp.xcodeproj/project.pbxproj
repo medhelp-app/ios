@@ -24,6 +24,7 @@
 		732D614A1D0E542A00ECFF6D /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61491D0E542A00ECFF6D /* URLHelper.swift */; };
 		732D614E1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */; };
 		732D615A1D0FC73200ECFF6D /* ImageCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61591D0FC73100ECFF6D /* ImageCircle.swift */; };
+		732D617D1D10BBB400ECFF6D /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732D61741D10BB8C00ECFF6D /* Cosmos.framework */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
 		734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; };
 		734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -50,6 +51,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		732D61731D10BB8C00ECFF6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2B622EAF1B37BAE50090D81B;
+			remoteInfo = Cosmos;
+		};
+		732D61751D10BB8C00ECFF6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E646DAE1C04438B00048339;
+			remoteInfo = "Cosmos-tvOS";
+		};
+		732D61771D10BB8C00ECFF6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2B622EB91B37BAE50090D81B;
+			remoteInfo = CosmosTests;
+		};
+		732D61791D10BB8C00ECFF6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2B622EF01B37BC120090D81B;
+			remoteInfo = Demo;
+		};
+		732D617B1D10BBAA00ECFF6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B622EAE1B37BAE50090D81B;
+			remoteInfo = Cosmos;
+		};
 		734862171CFBE0D800E82824 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
@@ -197,6 +233,7 @@
 		732D61491D0E542A00ECFF6D /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDatePicker.swift; sourceTree = "<group>"; };
 		732D61591D0FC73100ECFF6D /* ImageCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCircle.swift; sourceTree = "<group>"; };
+		732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cosmos.xcodeproj; path = CryptoSwift/../Cosmos/Cosmos.xcodeproj; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
 		734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorEdit.swift; sourceTree = "<group>"; };
@@ -231,6 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732D617D1D10BBB400ECFF6D /* Cosmos.framework in Frameworks */,
 				734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */,
 				73D504761CC4002300A3B1A9 /* Alamofire.framework in Frameworks */,
 			);
@@ -263,6 +301,17 @@
 				732D61431D0E014800ECFF6D /* Patient.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		732D616C1D10BB8C00ECFF6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				732D61741D10BB8C00ECFF6D /* Cosmos.framework */,
+				732D61761D10BB8C00ECFF6D /* Cosmos.framework */,
+				732D61781D10BB8C00ECFF6D /* CosmosTests.xctest */,
+				732D617A1D10BB8C00ECFF6D /* Demo.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7348620A1CFBE0CF00E82824 /* Products */ = {
@@ -332,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				73D5045B1CC3FFE400A3B1A9 /* Alamofire.xcodeproj */,
+				732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */,
 				734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */,
 				73E5B4E01CB971A8003C9435 /* MedHelp */,
 				73E5B4F81CB971A8003C9435 /* MedHelpTests */,
@@ -400,6 +450,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				732D617C1D10BBAA00ECFF6D /* PBXTargetDependency */,
 				734862221CFBE0EE00E82824 /* PBXTargetDependency */,
 				73D504741CC4001300A3B1A9 /* PBXTargetDependency */,
 			);
@@ -487,6 +538,10 @@
 					ProjectRef = 73D5045B1CC3FFE400A3B1A9 /* Alamofire.xcodeproj */;
 				},
 				{
+					ProductGroup = 732D616C1D10BB8C00ECFF6D /* Products */;
+					ProjectRef = 732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */;
+				},
+				{
 					ProductGroup = 7348620A1CFBE0CF00E82824 /* Products */;
 					ProjectRef = 734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */;
 				},
@@ -501,6 +556,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		732D61741D10BB8C00ECFF6D /* Cosmos.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cosmos.framework;
+			remoteRef = 732D61731D10BB8C00ECFF6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		732D61761D10BB8C00ECFF6D /* Cosmos.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cosmos.framework;
+			remoteRef = 732D61751D10BB8C00ECFF6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		732D61781D10BB8C00ECFF6D /* CosmosTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CosmosTests.xctest;
+			remoteRef = 732D61771D10BB8C00ECFF6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		732D617A1D10BB8C00ECFF6D /* Demo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Demo.app;
+			remoteRef = 732D61791D10BB8C00ECFF6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		734862181CFBE0D800E82824 /* CryptoSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -672,6 +755,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		732D617C1D10BBAA00ECFF6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cosmos;
+			targetProxy = 732D617B1D10BBAA00ECFF6D /* PBXContainerItemProxy */;
+		};
 		734862221CFBE0EE00E82824 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "CryptoSwift iOS";

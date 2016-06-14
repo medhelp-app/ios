@@ -1350,7 +1350,7 @@
                                             <constraint firstItem="3ZT-EK-XHY" firstAttribute="centerX" secondItem="j52-yR-G3K" secondAttribute="centerX" id="zNL-kf-C9V"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFw-DN-zLe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFw-DN-zLe" userLabel="Name">
                                         <rect key="frame" x="37" y="160" width="300" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="EdN-Xf-Efu"/>
@@ -1368,7 +1368,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFJ-e9-tvp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFJ-e9-tvp" userLabel="Number">
                                         <rect key="frame" x="37" y="194" width="300" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="MH2-do-2Oi"/>
@@ -1377,13 +1377,42 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoG-H5-rXf">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoG-H5-rXf" userLabel="Appointment">
                                         <rect key="frame" x="37" y="228" width="300" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="MARCAR CONSULTA">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-Iz-hPH" userLabel="Average Rating" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="103" y="273" width="168" height="35"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="3.7000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="filledBorderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="IFw-DN-zLe" firstAttribute="centerX" secondItem="FT2-X3-652" secondAttribute="centerX" id="3WN-ar-65r"/>
@@ -1391,6 +1420,7 @@
                                     <constraint firstAttribute="trailing" secondItem="IFw-DN-zLe" secondAttribute="trailing" id="B5l-z5-UO8"/>
                                     <constraint firstItem="IFw-DN-zLe" firstAttribute="top" secondItem="3ZT-EK-XHY" secondAttribute="bottom" constant="10" id="Cud-IF-qfF"/>
                                     <constraint firstItem="IFw-DN-zLe" firstAttribute="leading" secondItem="FT2-X3-652" secondAttribute="leading" id="Oyn-jB-WGa"/>
+                                    <constraint firstItem="4wH-Iz-hPH" firstAttribute="centerX" secondItem="FT2-X3-652" secondAttribute="centerX" id="RN3-89-6aK"/>
                                     <constraint firstItem="j52-yR-G3K" firstAttribute="top" secondItem="FT2-X3-652" secondAttribute="top" id="RYe-a5-kbP"/>
                                     <constraint firstItem="I7H-Bu-SuK" firstAttribute="top" secondItem="IFw-DN-zLe" secondAttribute="bottom" id="WkI-7c-eUb"/>
                                     <constraint firstAttribute="trailing" secondItem="IFw-DN-zLe" secondAttribute="trailing" id="Zb9-cf-vtq"/>
@@ -1401,6 +1431,7 @@
                                     <constraint firstItem="j52-yR-G3K" firstAttribute="centerX" secondItem="FT2-X3-652" secondAttribute="centerX" id="ojt-if-76V"/>
                                     <constraint firstAttribute="bottom" secondItem="IFw-DN-zLe" secondAttribute="bottom" constant="426" id="rzy-Ay-bY4"/>
                                     <constraint firstItem="j52-yR-G3K" firstAttribute="top" secondItem="FT2-X3-652" secondAttribute="top" id="s5R-m6-IHZ"/>
+                                    <constraint firstItem="4wH-Iz-hPH" firstAttribute="top" secondItem="RoG-H5-rXf" secondAttribute="bottom" constant="10" id="sp0-ie-RUY"/>
                                     <constraint firstAttribute="bottom" secondItem="IFw-DN-zLe" secondAttribute="bottom" constant="436" id="tgz-Yf-s2a"/>
                                     <constraint firstItem="I7H-Bu-SuK" firstAttribute="centerX" secondItem="FT2-X3-652" secondAttribute="centerX" id="x6Y-Pe-ATo"/>
                                 </constraints>
@@ -1435,6 +1466,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="averageRating" destination="4wH-Iz-hPH" id="KUR-c4-tH9"/>
+                        <outlet property="emailLabel" destination="I7H-Bu-SuK" id="ChX-mS-aFc"/>
+                        <outlet property="nameLabel" destination="IFw-DN-zLe" id="tb4-CJ-Vby"/>
+                        <outlet property="numberLabel" destination="GFJ-e9-tvp" id="LVQ-zl-liX"/>
                         <outlet property="profileImage" destination="3ZT-EK-XHY" id="rrl-Jt-87L"/>
                         <segue destination="FFd-Bf-7nf" kind="popoverPresentation" identifier="giveOpinion" popoverAnchorView="dSI-aw-RUL" id="0XL-iV-Rok">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
