@@ -30,7 +30,7 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
                     if (array?.count == 0 || array == nil) {
                         return
                     }
-                    
+                    self.doctorsArray = [DoctorItem]()
                     for n in array! {
                         let doctors = n as! NSDictionary
                         
@@ -92,7 +92,6 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
-        print ("why is not loading? \(self.doctorsArray.count)")
         cell.textLabel?.text = self.doctorsArray[indexPath.row].name
         cell.detailTextLabel?.text = self.doctorsArray[indexPath.row].specialty
         if (self.doctorsArray[indexPath.row].image != "") {
