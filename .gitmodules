@@ -1,3 +1,6 @@
 [submodule "CryptoSwift"]
 	path = CryptoSwift
 	url = https://github.com/krzyzanowskim/CryptoSwift.git
+[submodule "Cosmos"]
+	path = Cosmos
+	url = https://github.com/marketplacer/Cosmos.git
