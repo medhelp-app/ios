@@ -24,7 +24,8 @@
 		732D614A1D0E542A00ECFF6D /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61491D0E542A00ECFF6D /* URLHelper.swift */; };
 		732D614E1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */; };
 		732D615A1D0FC73200ECFF6D /* ImageCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61591D0FC73100ECFF6D /* ImageCircle.swift */; };
-		732D617D1D10BBB400ECFF6D /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732D61741D10BB8C00ECFF6D /* Cosmos.framework */; };
+		732D617D1D10BBB400ECFF6D /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732D61741D10BB8C00ECFF6D /* Cosmos.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		732D617E1D10C3A700ECFF6D /* Cosmos.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 732D61741D10BB8C00ECFF6D /* Cosmos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
 		734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; };
 		734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -207,6 +208,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				732D617E1D10C3A700ECFF6D /* Cosmos.framework in Embed Framwork */,
 				734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */,
 				73D504771CC4002A00A3B1A9 /* Alamofire.framework in Embed Framwork */,
 			);

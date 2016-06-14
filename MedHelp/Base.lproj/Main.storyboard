@@ -1324,7 +1324,7 @@
                                     <segue destination="koI-ZK-fen" kind="presentation" id="X8z-nj-oXm"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FT2-X3-652">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FT2-X3-652">
                                 <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j52-yR-G3K" userLabel="Picture Container">
@@ -1377,18 +1377,22 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoG-H5-rXf" userLabel="Appointment">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoG-H5-rXf" userLabel="Appointment">
                                         <rect key="frame" x="37" y="228" width="300" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="MARCAR CONSULTA">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-Iz-hPH" userLabel="Average Rating" customClass="CosmosView" customModule="Cosmos">
-                                        <rect key="frame" x="103" y="273" width="168" height="35"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wH-Iz-hPH" userLabel="Average Rating" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="102" y="268" width="170" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="B6D-jS-lCy"/>
+                                            <constraint firstAttribute="width" constant="170" id="U3c-Sb-aI9"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                <real key="value" value="3.7000000000000002"/>
+                                                <real key="value" value="3.5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                 <integer key="value" value="5"/>
@@ -1416,6 +1420,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="IFw-DN-zLe" firstAttribute="centerX" secondItem="FT2-X3-652" secondAttribute="centerX" id="3WN-ar-65r"/>
+                                    <constraint firstAttribute="bottom" secondItem="4wH-Iz-hPH" secondAttribute="bottom" constant="309" id="51D-6k-ox3"/>
                                     <constraint firstItem="RoG-H5-rXf" firstAttribute="centerX" secondItem="FT2-X3-652" secondAttribute="centerX" id="5sl-J6-J29"/>
                                     <constraint firstAttribute="trailing" secondItem="IFw-DN-zLe" secondAttribute="trailing" id="B5l-z5-UO8"/>
                                     <constraint firstItem="IFw-DN-zLe" firstAttribute="top" secondItem="3ZT-EK-XHY" secondAttribute="bottom" constant="10" id="Cud-IF-qfF"/>
@@ -1425,8 +1430,10 @@
                                     <constraint firstItem="I7H-Bu-SuK" firstAttribute="top" secondItem="IFw-DN-zLe" secondAttribute="bottom" id="WkI-7c-eUb"/>
                                     <constraint firstAttribute="trailing" secondItem="IFw-DN-zLe" secondAttribute="trailing" id="Zb9-cf-vtq"/>
                                     <constraint firstItem="GFJ-e9-tvp" firstAttribute="top" secondItem="I7H-Bu-SuK" secondAttribute="bottom" id="ZsW-hr-oHN"/>
+                                    <constraint firstItem="RoG-H5-rXf" firstAttribute="leading" secondItem="GFJ-e9-tvp" secondAttribute="leading" id="ddX-Gn-T2Y"/>
                                     <constraint firstAttribute="trailing" secondItem="j52-yR-G3K" secondAttribute="trailing" constant="113" id="gp8-D0-hT7"/>
                                     <constraint firstItem="GFJ-e9-tvp" firstAttribute="centerX" secondItem="FT2-X3-652" secondAttribute="centerX" id="lPu-M9-bCl"/>
+                                    <constraint firstItem="RoG-H5-rXf" firstAttribute="top" secondItem="GFJ-e9-tvp" secondAttribute="bottom" constant="17" id="ncx-p2-xAC"/>
                                     <constraint firstItem="IFw-DN-zLe" firstAttribute="leading" secondItem="FT2-X3-652" secondAttribute="leading" id="obZ-mP-tF4"/>
                                     <constraint firstItem="j52-yR-G3K" firstAttribute="centerX" secondItem="FT2-X3-652" secondAttribute="centerX" id="ojt-if-76V"/>
                                     <constraint firstAttribute="bottom" secondItem="IFw-DN-zLe" secondAttribute="bottom" constant="426" id="rzy-Ay-bY4"/>
@@ -1451,6 +1458,7 @@
                         <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FT2-X3-652" firstAttribute="top" secondItem="FgN-Oo-ooz" secondAttribute="bottom" id="Bm7-cM-SVE"/>
+                            <constraint firstItem="FT2-X3-652" firstAttribute="top" secondItem="FgN-Oo-ooz" secondAttribute="bottom" id="KWx-zk-rwv"/>
                             <constraint firstItem="FgN-Oo-ooz" firstAttribute="top" secondItem="qQF-En-gMl" secondAttribute="bottom" id="VB9-We-302"/>
                             <constraint firstItem="FT2-X3-652" firstAttribute="top" secondItem="qQF-En-gMl" secondAttribute="bottom" id="W9P-0m-jZP"/>
                             <constraint firstAttribute="trailing" secondItem="FT2-X3-652" secondAttribute="trailing" id="dfv-7g-Mc2"/>
@@ -1460,6 +1468,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Bm7-cM-SVE"/>
                                 <exclude reference="W9P-0m-jZP"/>
                             </mask>
                         </variation>

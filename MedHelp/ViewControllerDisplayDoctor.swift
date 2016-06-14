@@ -24,6 +24,9 @@ class ViewControllerDisplayDoctor: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.averageRating.settings.fillMode = .Half
+        self.averageRating.settings.updateOnTouch = false
+        
         self.profileImage.image = doctorItem.image
     }
     
