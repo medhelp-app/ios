@@ -67,7 +67,7 @@ class ViewControllerPatientEdit: UIViewController, UIImagePickerControllerDelega
                 }
         }
         
-        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/patients/\(LoginInfo.id)/image", headers: headers)
+        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/users/\(LoginInfo.id)/image", headers: headers)
             .responseJSON { response in
                 //debugPrint(response)
                 if let JSON = response.result.value {
@@ -79,13 +79,15 @@ class ViewControllerPatientEdit: UIViewController, UIImagePickerControllerDelega
                     if keyExists {
                         print (keyExists)
                     } else {
-                        let img = (dict!["profileImage"] as? String)!
-                        if (img != "") {
-                            print ("load new image")
-                            self.profilePicture.image = ImageDecoder.decode(img)
-                            self.image = img
-                            print ("igual")
-                            print(ImageEncoder.encoder(self.profilePicture.image!) == img)
+                        if (dict!["profileImage"] != nil) {
+                            let img = (dict!["profileImage"] as? String)!
+                            if (img != "") {
+                                print ("load new image")
+                                self.profilePicture.image = ImageDecoder.decode(img)
+                                self.image = img
+                                print ("igual")
+                                print(ImageEncoder.encoder(self.profilePicture.image!) == img)
+                            }
                         }
                     }
                 }
@@ -197,7 +199,7 @@ class ViewControllerPatientEdit: UIViewController, UIImagePickerControllerDelega
                 
                 Alamofire.upload(
                     .PUT,
-                    "https://medhelp-app.herokuapp.com/api/patient/\(LoginInfo.id)/image", headers: headers,
+                    "https://medhelp-app.herokuapp.com/api/users/\(LoginInfo.id)/image", headers: headers,
                     multipartFormData: { multipartFormData in
                         if let imageData = UIImageJPEGRepresentation(self.profilePicture.image!, 0.25) {
                             multipartFormData.appendBodyPart(data: imageData, name: "profileImage", fileName: "file.png", mimeType: "image/png")

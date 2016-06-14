@@ -87,7 +87,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: Actions
     
     @IBAction func Login(sender: UIButton) {
-        
+        self.displayMessage.text = ""
         let login = loginField.text!
         let password = passwordField.text!
         

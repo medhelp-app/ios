@@ -34,7 +34,7 @@ class ViewControllerPatientBody: UIViewController, UIPopoverPresentationControll
         var severity = 0
         
         for p in part {
-            var index = ProblemsHelper.findSeverityLevel(p.severity)
+            let index = ProblemsHelper.findSeverityLevel(p.severity)
             if severity < index {
                 severity = index
             }
@@ -45,7 +45,7 @@ class ViewControllerPatientBody: UIViewController, UIPopoverPresentationControll
     
     func loadBody() {
         for key in Array(Patient.bodyProblems.problems.keys) {
-            var severity = self.mostSevere(Patient.bodyProblems.problems[key]!)
+            let severity = self.mostSevere(Patient.bodyProblems.problems[key]!)
             switch key {
             case ProblemsHelper.HEAD:
                 self.headImage.image = UIImage(named: severity + key)

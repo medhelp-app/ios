@@ -13,49 +13,55 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet weak var tableView: UITableView!
     var doctorsArray = [DoctorItem]()
-    var filteredDoctors = [DoctorItem]()
-    var doctorsName = [String]()
-    var sendName = ""
+    var selectedDoctor = DoctorItem()
     
-    func getSuggestions() {
+    func getSuggestions(searchString: String) {
         let headers = [
             "x-access-token": "\(LoginInfo.token)",
             "Accept": "application/json"
         ]
         
-        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/doctors/find/suggestions", headers: headers)
+        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/doctors/find/\(searchString)", headers: headers)
             .responseJSON { response in
                 //debugPrint(response)
                 if let JSON = response.result.value {
                     let array = JSON as? NSArray
-                    self.doctorsName = [String]()
-                    print("array \(array?.count)")
-                    for n in 0...(array!.count - 2) {
-                        if (array![n] !== NSNull()) {
-                            print(array![n])
-                            print(array![n] as! String)
-                            self.doctorsName += [array![n] as! String]
-                       }
+                    
+                    if (array?.count == 0 || array == nil) {
+                        return
                     }
-                    print(self.doctorsName.count)
-                    self.fillTable()
+                    
+                    for n in array! {
+                        let doctors = n as! NSDictionary
+                        
+                        let id = doctors["_id"] as! String
+                        let name = doctors["name"] as! String
+                        var specialty = ""
+                        if (doctors["doctorType"] != nil) {
+                            if (doctors["doctorType"] !== NSNull()) {
+                                specialty = doctors["doctorType"] as! String
+                            }
+                        }
+                        let email = doctors["email"] as! String
+                        var image = UIImage(named: "Profile")
+                        if (doctors["profileImage"] != nil) {
+                            if (doctors["profileImage"] as! String != "") {
+                                image = ImageDecoder.decode(doctors["profileImage"] as! String)
+                            }
+                        }
+                        
+                        let item = DoctorItem(id: id, name: name, specialty: specialty, email: email, image: image!)
+                        self.doctorsArray += [item]
+                    }
+                    
+                    self.tableView.reloadData()
+                    self.searchDisplayController?.searchResultsTableView.reloadData()
                 }
         }
     }
     
-    func fillTable() {
-        if (self.doctorsName.count > 0) {
-            for i in 0...(self.doctorsName.count - 1) {
-                doctorsArray += [DoctorItem(name : self.doctorsName[i], specialty: "Especialidade")]
-            }
-        }
-        self.tableView.reloadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getSuggestions()
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,12 +70,10 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier! == "patientScreen") {
-            let tabBarController = segue.destinationViewController as! UITabBarController
+        if (segue.identifier! == "displayDoctor") {
+            let destination = segue.destinationViewController as! ViewControllerDisplayDoctor
             
-            let destination = tabBarController.viewControllers![0] as! ViewControllerDisplayDoctor
-            
-            destination.name = self.sendName
+            destination.doctorItem = self.selectedDoctor
         }
     }
     
@@ -81,27 +85,19 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (tableView == self.searchDisplayController?.searchResultsTableView) {
-            return self.filteredDoctors.count
-        } else {
-            return self.doctorsArray.count
-        }
+        return self.doctorsArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
-        var doctor : DoctorItem
-        
-        if (tableView == self.searchDisplayController?.searchResultsTableView) {
-            doctor = self.filteredDoctors[indexPath.row]
-        } else {
-            doctor = self.doctorsArray[indexPath.row]
+        print ("why is not loading? \(self.doctorsArray.count)")
+        cell.textLabel?.text = self.doctorsArray[indexPath.row].name
+        cell.detailTextLabel?.text = self.doctorsArray[indexPath.row].specialty
+        if (self.doctorsArray[indexPath.row].image != "") {
+            cell.imageView?.image = self.doctorsArray[indexPath.row].image
         }
-        
-        cell.textLabel?.text = doctor.name
-        
         return cell
     }
     
@@ -109,55 +105,29 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        var doctor : DoctorItem
+        let doctor : DoctorItem = self.doctorsArray[indexPath.row]
         
-        if (tableView == self.searchDisplayController?.searchResultsTableView) {
-            
-            doctor = self.filteredDoctors[indexPath.row]
-            
-        } else {
-            
-            doctor = self.doctorsArray[indexPath.row]
-            
-        }
+        self.selectedDoctor = doctor
         
-        self.sendName = doctor.name
         self.performSegueWithIdentifier("displayDoctor", sender: self)
-    }
-    
-    // Mark - Search
-    
-    func filterContentForSearchText(searchText : String, scope : String = "Title") {
-        
-        self.filteredDoctors = self.doctorsArray.filter({(doctor : DoctorItem) -> Bool in
-          
-            let categoryMatch = (scope == "Title")
-            let stringMatch = doctor.name.rangeOfString(searchText)
-            
-            return categoryMatch && (stringMatch != nil)
-            
-        })
     }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
         
-        
-        self.filterContentForSearchText(searchString!, scope: "Title")
-        
-        return true
-        
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        
-        self.filterContentForSearchText((self.searchDisplayController?.searchBar.text)!, scope: "Title")
+        if (searchString == " ") {
+            self.searchDisplayController?.searchBar.text = ""
+            return true
+        }
+        self.doctorsArray = [DoctorItem]()
+        self.getSuggestions(searchString!)
         
         return true
         
     }
     
-    
-    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        print(searchBar.text)
+    }
     
     
     

@@ -12,15 +12,17 @@ import Alamofire
 
 class ViewControllerDisplayDoctor: UIViewController {
     
-    var name = ""
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    var doctorItem = DoctorItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.profileImage.image = doctorItem.image
     }
     
-    override func viewDidAppear(animated: Bool) {
-        print ("nome \(self.name)")
+    override func viewWillAppear(animated: Bool) {
+        ImageCircle.styleCircleForImage(self.profileImage)
     }
-
 }

@@ -23,6 +23,7 @@
 		732D61481D0E18C000ECFF6D /* ViewControllerDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */; };
 		732D614A1D0E542A00ECFF6D /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61491D0E542A00ECFF6D /* URLHelper.swift */; };
 		732D614E1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */; };
+		732D615A1D0FC73200ECFF6D /* ImageCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61591D0FC73100ECFF6D /* ImageCircle.swift */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
 		734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; };
 		734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -195,6 +196,7 @@
 		732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDropdown.swift; sourceTree = "<group>"; };
 		732D61491D0E542A00ECFF6D /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDatePicker.swift; sourceTree = "<group>"; };
+		732D61591D0FC73100ECFF6D /* ImageCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCircle.swift; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
 		734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorEdit.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				732D61371D0D22EE00ECFF6D /* ScreenSizes.swift */,
 				732D61391D0DACC300ECFF6D /* ProblemsHelper.swift */,
 				732D61491D0E542A00ECFF6D /* URLHelper.swift */,
+				732D61591D0FC73100ECFF6D /* ImageCircle.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				736D53C11CF9028300AD47D2 /* ViewControllerDoctorEdit.swift in Sources */,
 				732D61461D0E124500ECFF6D /* ViewControllerAddProblem.swift in Sources */,
 				73A0ED231CF2ACFF00193299 /* ViewControllerPatientEdit.swift in Sources */,
+				732D615A1D0FC73200ECFF6D /* ImageCircle.swift in Sources */,
 				73D5047B1CC40A7E00A3B1A9 /* Validator.swift in Sources */,
 				73E5B4EA1CB971A8003C9435 /* MedHelp.xcdatamodeld in Sources */,
 				736D53CC1CF9200800AD47D2 /* DoctorItem.swift in Sources */,

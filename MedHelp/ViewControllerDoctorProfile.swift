@@ -70,7 +70,7 @@ class ViewControllerDoctorProfile: UIViewController {
                 }
         }
         
-        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/doctors/\(LoginInfo.id)/image", headers: headers)
+        Alamofire.request(.GET, "https://medhelp-app.herokuapp.com/api/users/\(LoginInfo.id)/image", headers: headers)
             .responseJSON { response in
                 //debugPrint(response)
                 if let JSON = response.result.value {
@@ -82,9 +82,11 @@ class ViewControllerDoctorProfile: UIViewController {
                     if keyExists {
                         print (keyExists)
                     } else {
-                        let img = (dict!["profileImage"] as? String)!
-                        if (img != "") {
-                            self.profilePicture.image = ImageDecoder.decode(img)
+                        if (dict!["profileImage"] != nil) {
+                            let img = (dict!["profileImage"] as? String)!
+                            if (img != "") {
+                                self.profilePicture.image = ImageDecoder.decode(img)
+                            }
                         }
                     }
                 }
