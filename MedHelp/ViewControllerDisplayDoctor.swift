@@ -76,11 +76,16 @@ class ViewControllerDisplayDoctor: UIViewController, MKMapViewDelegate, CLLocati
                     if keyExists {
                         print (keyExists)
                     } else {
-                        self.averageRating.rating = (dict!["generalRating"] as? Double)!
-                        self.ontime.rating = (dict!["punctualityRating"] as? Double)!
-                        self.attention.rating = (dict!["attentionRating"] as? Double)!
-                        self.place.rating = (dict!["installationRating"] as? Double)!
-                        self.numberRatings.text =  "Baseado em \((dict!["numberOfEvaluations"] as? Int)!) opiniões"
+                        print(JSON)
+                        if (dict!["numberOfEvaluations"] != nil) {
+                            if ((dict!["numberOfEvaluations"] as? Int)! > 0) {
+                                self.averageRating.rating = (dict!["generalRating"] as? Double)!
+                                self.ontime.rating = (dict!["punctualityRating"] as? Double)!
+                                self.attention.rating = (dict!["attentionRating"] as? Double)!
+                                self.place.rating = (dict!["installationRating"] as? Double)!
+                                self.numberRatings.text =  "Baseado em \((dict!["numberOfEvaluations"] as? Int)!) opiniões"
+                            }
+                        }
                     }
                 }
         }
