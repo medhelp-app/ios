@@ -27,6 +27,9 @@
 		732D617D1D10BBB400ECFF6D /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732D61741D10BB8C00ECFF6D /* Cosmos.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		732D617E1D10C3A700ECFF6D /* Cosmos.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 732D61741D10BB8C00ECFF6D /* Cosmos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		732D61801D10EFCA00ECFF6D /* ViewControllerRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D617F1D10EFCA00ECFF6D /* ViewControllerRating.swift */; };
+		732D61821D110F0A00ECFF6D /* ViewControllerDisplayRatings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61811D110F0900ECFF6D /* ViewControllerDisplayRatings.swift */; };
+		732D61841D11151500ECFF6D /* RatingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61831D11151500ECFF6D /* RatingItem.swift */; };
+		732D61861D111C5100ECFF6D /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61851D111C5000ECFF6D /* RatingCell.swift */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
 		734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; };
 		734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -238,6 +241,9 @@
 		732D61591D0FC73100ECFF6D /* ImageCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCircle.swift; sourceTree = "<group>"; };
 		732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cosmos.xcodeproj; path = CryptoSwift/../Cosmos/Cosmos.xcodeproj; sourceTree = "<group>"; };
 		732D617F1D10EFCA00ECFF6D /* ViewControllerRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerRating.swift; sourceTree = "<group>"; };
+		732D61811D110F0900ECFF6D /* ViewControllerDisplayRatings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDisplayRatings.swift; sourceTree = "<group>"; };
+		732D61831D11151500ECFF6D /* RatingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingItem.swift; sourceTree = "<group>"; };
+		732D61851D111C5000ECFF6D /* RatingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
 		734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorEdit.swift; sourceTree = "<group>"; };
@@ -347,6 +353,7 @@
 				732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */,
 				732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */,
 				732D617F1D10EFCA00ECFF6D /* ViewControllerRating.swift */,
+				732D61811D110F0900ECFF6D /* ViewControllerDisplayRatings.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -414,10 +421,12 @@
 				73E5B4E11CB971A8003C9435 /* AppDelegate.swift */,
 				73E5B4E51CB971A8003C9435 /* Main.storyboard */,
 				736D53CB1CF9200800AD47D2 /* DoctorItem.swift */,
+				732D61831D11151500ECFF6D /* RatingItem.swift */,
 				73E5B4EB1CB971A8003C9435 /* Assets.xcassets */,
 				73E5B4ED1CB971A8003C9435 /* LaunchScreen.storyboard */,
 				73E5B4F01CB971A8003C9435 /* Info.plist */,
 				73E5B4E81CB971A8003C9435 /* MedHelp.xcdatamodeld */,
+				732D61851D111C5000ECFF6D /* RatingCell.swift */,
 			);
 			path = MedHelp;
 			sourceTree = "<group>";
@@ -708,6 +717,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				73E5B4E41CB971A8003C9435 /* ViewController.swift in Sources */,
+				732D61841D11151500ECFF6D /* RatingItem.swift in Sources */,
+				732D61821D110F0A00ECFF6D /* ViewControllerDisplayRatings.swift in Sources */,
 				732D613C1D0DC17700ECFF6D /* ViewControllerProblemsPopUp.swift in Sources */,
 				73E5B4E21CB971A8003C9435 /* AppDelegate.swift in Sources */,
 				732D61441D0E014800ECFF6D /* Patient.swift in Sources */,
@@ -739,6 +750,7 @@
 				732D612A1D0CBD7800ECFF6D /* ViewControllerPatientBody.swift in Sources */,
 				732D614A1D0E542A00ECFF6D /* URLHelper.swift in Sources */,
 				732D61261D08029800ECFF6D /* ImageCompress.swift in Sources */,
+				732D61861D111C5100ECFF6D /* RatingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

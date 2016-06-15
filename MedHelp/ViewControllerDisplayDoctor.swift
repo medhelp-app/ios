@@ -208,11 +208,22 @@ class ViewControllerDisplayDoctor: UIViewController, MKMapViewDelegate, CLLocati
             let destination = vc as! ViewControllerRating
             destination.controller = self
             destination.id = self.doctorItem.id
+        } else if segue.identifier == "displayRatings" {
+            let vc = segue.destinationViewController
+            
+            let controller = vc.popoverPresentationController
+            
+            if controller != nil {
+                controller?.delegate = self
+            }
+            
+            let destination = vc as! ViewControllerDisplayRatings
+            destination.id = self.doctorItem.id
         }
     }
     
     @IBAction func openRatings(sender: AnyObject) {
-        
+        self.performSegueWithIdentifier("displayRatings", sender: self)
     }
     
     @IBAction func rate(sender: AnyObject) {

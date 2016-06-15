@@ -1551,6 +1551,121 @@
             </objects>
             <point key="canvasLocation" x="628.5" y="2462.5"/>
         </scene>
+        <!--View Controller Display Ratings-->
+        <scene sceneID="KiF-0j-GoL">
+            <objects>
+                <viewController id="xKr-uj-ctU" customClass="ViewControllerDisplayRatings" customModule="MedHelp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hyf-sO-BBu"/>
+                        <viewControllerLayoutGuide type="bottom" id="hfh-KW-wyh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jWh-h9-R8x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opiniões" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27I-A1-Xl3">
+                                <rect key="frame" x="16" y="30" width="67.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-eb-aMl">
+                                <rect key="frame" x="16" y="60" width="343" height="606.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingCell" rowHeight="110" id="q3A-Sl-34c" customClass="RatingCell" customModule="MedHelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q3A-Sl-34c" id="i7G-16-I4r">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="109.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4b-Qv-rKw" userLabel="Comment">
+                                                    <rect key="frame" x="23" y="8" width="297" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="Cl3-hU-UmG"/>
+                                                        <constraint firstAttribute="height" constant="30" id="CzA-ED-1R1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="CzA-ED-1R1"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pr-Zl-kQf" userLabel="Rating" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="23" y="88" width="175" height="3.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="175" id="yWB-oL-SI9"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Pr-Zl-kQf" firstAttribute="leading" secondItem="f4b-Qv-rKw" secondAttribute="leading" id="ao9-U7-qii"/>
+                                                <constraint firstItem="f4b-Qv-rKw" firstAttribute="leading" secondItem="i7G-16-I4r" secondAttribute="leadingMargin" constant="15" id="ft8-ft-2XO"/>
+                                                <constraint firstItem="f4b-Qv-rKw" firstAttribute="top" secondItem="i7G-16-I4r" secondAttribute="topMargin" id="hja-oa-JS6"/>
+                                                <constraint firstItem="0Pr-Zl-kQf" firstAttribute="top" secondItem="f4b-Qv-rKw" secondAttribute="bottom" id="hl6-am-VK2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0Pr-Zl-kQf" secondAttribute="bottom" constant="10" id="xr0-Ea-8ih"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="f4b-Qv-rKw" secondAttribute="trailing" constant="15" id="ycQ-HZ-03d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="comment" destination="f4b-Qv-rKw" id="XFe-lB-C6L"/>
+                                            <outlet property="rating" destination="0Pr-Zl-kQf" id="Skd-Mb-JGP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xKr-uj-ctU" id="y18-bs-f1u"/>
+                                    <outlet property="delegate" destination="xKr-uj-ctU" id="Wkg-es-NF3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="27I-A1-Xl3" firstAttribute="top" secondItem="hyf-sO-BBu" secondAttribute="bottom" constant="10" id="0ac-eE-R6k"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="27I-A1-Xl3" secondAttribute="leading" id="17e-bz-61E"/>
+                            <constraint firstItem="l9v-eb-aMl" firstAttribute="top" secondItem="27I-A1-Xl3" secondAttribute="bottom" constant="10" id="6zu-AA-hGx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l9v-eb-aMl" secondAttribute="trailing" id="J2g-zY-rP6"/>
+                            <constraint firstItem="hfh-KW-wyh" firstAttribute="top" secondItem="l9v-eb-aMl" secondAttribute="bottom" id="c6E-Hw-a9z"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="l9v-eb-aMl" secondAttribute="leading" id="yH0-Os-ntj"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="ratings" destination="l9v-eb-aMl" id="QZL-fC-2LX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5r0-ay-eYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168.5" y="2462.5"/>
+        </scene>
         <!--View Controller Display Doctor-->
         <scene sceneID="aqc-Qi-eBk">
             <objects>
@@ -1940,6 +2055,9 @@
                         <outlet property="place" destination="2og-55-Qzp" id="ZMF-6b-cll"/>
                         <outlet property="profileImage" destination="3ZT-EK-XHY" id="rrl-Jt-87L"/>
                         <segue destination="FFd-Bf-7nf" kind="popoverPresentation" identifier="rating" popoverAnchorView="u3a-pu-8vv" id="0XL-iV-Rok">
+                            <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
+                        </segue>
+                        <segue destination="xKr-uj-ctU" kind="popoverPresentation" identifier="displayRatings" popoverAnchorView="77W-yp-9e1" id="rki-eb-bWA">
                             <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
                         </segue>
                     </connections>
