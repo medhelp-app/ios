@@ -548,6 +548,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="attention" destination="0fl-6h-GPC" id="CwH-ni-Hro"/>
+                        <outlet property="commentTextField" destination="3YT-Uk-gfi" id="6sq-ng-GbN"/>
                         <outlet property="ontime" destination="j4l-Gu-4hr" id="rrx-wK-hJl"/>
                         <outlet property="place" destination="9ls-sA-RI5" id="U1k-co-D2T"/>
                     </connections>
@@ -1708,7 +1709,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmM-ug-z1X" userLabel="Attention" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GmM-ug-z1X" userLabel="Attention" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="58" y="452" width="170" height="30"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -1791,7 +1792,7 @@
                                             <constraint firstAttribute="height" constant="200" id="dsA-au-ABO"/>
                                         </constraints>
                                     </mapView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-SE-T7v" userLabel="On time" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-SE-T7v" userLabel="On time" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="58" y="372" width="170" height="30"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -1818,7 +1819,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2og-55-Qzp" userLabel="Place" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2og-55-Qzp" userLabel="Place" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="58" y="532" width="170" height="30"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">

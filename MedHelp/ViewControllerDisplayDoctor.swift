@@ -87,11 +87,9 @@ class ViewControllerDisplayDoctor: UIViewController, MKMapViewDelegate, CLLocati
     }
     
     func loadPin() {
-        //var annotation:MKAnnotation!
+
         var localSearchRequest:MKLocalSearchRequest!
         var localSearch:MKLocalSearch!
-        //var localSearchResponse:MKLocalSearchResponse!
-        //var error:NSError!
         var pointAnnotation:MKPointAnnotation!
         var pinAnnotationView:MKPinAnnotationView!
         
@@ -203,6 +201,8 @@ class ViewControllerDisplayDoctor: UIViewController, MKMapViewDelegate, CLLocati
             }
             
             let destination = vc as! ViewControllerRating
+            destination.controller = self
+            destination.id = self.doctorItem.id
         }
     }
     

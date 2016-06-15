@@ -19,7 +19,10 @@ class ViewControllerRating: UIViewController {
     @IBOutlet weak var ontime: CosmosView!
     @IBOutlet weak var attention: CosmosView!
     @IBOutlet weak var place: CosmosView!
+    @IBOutlet weak var commentTextField: UITextField!
     
+    var controller = ViewControllerDisplayDoctor()
+    var id = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,5 +39,21 @@ class ViewControllerRating: UIViewController {
     }
     
     @IBAction func save(sender: AnyObject) {
+        
+        let ontime = self.ontime.rating
+        let attention = self.attention.rating
+        let place = self.place.rating
+        let comment = self.commentTextField.text!
+        
+        Alamofire.request(.POST, URLHelper.sendOpnion(id), headers: URLHelper.getHeader(), parameters: ["punctualityRating" : ontime, "attentionRating": attention, "installationRating": place, "comment": comment])
+            .responseJSON { response in
+                
+                if let JSON = response.result.value {
+                    print(JSON)
+                    
+                    self.controller.loadSumarryOpinions()
+                    self.dismissViewControllerAnimated(false, completion: nil);
+                }
+        }
     }
 }

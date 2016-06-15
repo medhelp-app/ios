@@ -26,6 +26,10 @@ class URLHelper {
         return "https://medhelp-app.herokuapp.com/api/doctors/\(id)"
     }
     
+    static func sendOpnion(id: String) -> String {
+        return "https://medhelp-app.herokuapp.com/api/doctors/\(id)/opinions"
+    }
+    
     static func getHeader() -> [String:String] {
         let headers = [
             "x-access-token": "\(LoginInfo.token)",
