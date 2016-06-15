@@ -1642,7 +1642,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                <real key="value" value="2.5"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                 <integer key="value" value="5"/>
@@ -1668,7 +1668,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baseado em 6 opiniões" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrN-1K-gLd" userLabel="RatingsNumber">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baseado em 0 opiniões" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrN-1K-gLd" userLabel="RatingsNumber">
                                         <rect key="frame" x="37" y="308" width="300" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -1708,7 +1708,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GmM-ug-z1X" userLabel="Attention" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmM-ug-z1X" userLabel="Attention" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="58" y="452" width="170" height="30"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -1791,7 +1791,7 @@
                                             <constraint firstAttribute="height" constant="200" id="dsA-au-ABO"/>
                                         </constraints>
                                     </mapView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-SE-T7v" userLabel="On time" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-SE-T7v" userLabel="On time" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="58" y="372" width="170" height="30"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -1818,7 +1818,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2og-55-Qzp" userLabel="Place" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2og-55-Qzp" userLabel="Place" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="58" y="532" width="170" height="30"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -1934,6 +1934,7 @@
                         <outlet property="map" destination="yd3-J0-5wY" id="8bY-JP-7ON"/>
                         <outlet property="nameLabel" destination="IFw-DN-zLe" id="tb4-CJ-Vby"/>
                         <outlet property="numberLabel" destination="GFJ-e9-tvp" id="LVQ-zl-liX"/>
+                        <outlet property="numberRatings" destination="ZrN-1K-gLd" id="uU7-vo-jyj"/>
                         <outlet property="ontime" destination="b1L-SE-T7v" id="XUQ-l6-LMX"/>
                         <outlet property="place" destination="2og-55-Qzp" id="ZMF-6b-cll"/>
                         <outlet property="profileImage" destination="3ZT-EK-XHY" id="rrl-Jt-87L"/>

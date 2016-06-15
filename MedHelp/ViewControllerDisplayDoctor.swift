@@ -24,6 +24,7 @@ class ViewControllerDisplayDoctor: UIViewController, MKMapViewDelegate, CLLocati
     @IBOutlet weak var attention: CosmosView!
     @IBOutlet weak var place: CosmosView!
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var numberRatings: UILabel!
     
     let locationManager = CLLocationManager()
     
@@ -49,33 +50,43 @@ class ViewControllerDisplayDoctor: UIViewController, MKMapViewDelegate, CLLocati
                         print (keyExists)
                     } else {
                         self.numberLabel.text = (dict!["phone"] as? String)!
-                        
+                        print("numero: \((dict!["phone"] as? String)!)")
                         self.street = (dict!["addressStreet"] as? String)!
                         self.zipCode = (dict!["zipCode"] as? String)!
                         self.city = (dict!["city"] as? String)!
                         self.state = (dict!["state"] as? String)!
                         self.country = (dict!["country"] as? String)!
+                        
+                        self.loadPin()
                     }
                 }
         }
     }
 
     func loadSumarryOpinions() {
-        
+        Alamofire.request(.GET, URLHelper.getDoctorsOpnionSummary(self.doctorItem.id), headers: URLHelper.getHeader())
+            .responseJSON { response in
+                //debugPrint(response)
+                if let JSON = response.result.value {
+                    
+                    let dict = JSON as? NSDictionary
+                    
+                    let keyExists = dict!["error"] != nil
+                    
+                    if keyExists {
+                        print (keyExists)
+                    } else {
+                        self.averageRating.rating = (dict!["generalRating"] as? Double)!
+                        self.ontime.rating = (dict!["punctualityRating"] as? Double)!
+                        self.attention.rating = (dict!["attentionRating"] as? Double)!
+                        self.place.rating = (dict!["installationRating"] as? Double)!
+                        self.numberRatings.text =  "Baseado em \((dict!["numberOfEvaluations"] as? Int)!) opiniões"
+                    }
+                }
+        }
     }
     
-    func loadMap() {
-        
-        self.locationManager.delegate = self
-        
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        self.locationManager.startUpdatingLocation()
-        
-        self.map.showsUserLocation = true
-        
+    func loadPin() {
         //var annotation:MKAnnotation!
         var localSearchRequest:MKLocalSearchRequest!
         var localSearch:MKLocalSearch!
@@ -93,7 +104,7 @@ class ViewControllerDisplayDoctor: UIViewController, MKMapViewDelegate, CLLocati
         localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
             
             if localSearchResponse == nil{
-                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertController = UIAlertController(title: nil, message: "Endereço não encontrado", preferredStyle: UIAlertControllerStyle.Alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alertController, animated: true, completion: nil)
                 return
@@ -108,14 +119,30 @@ class ViewControllerDisplayDoctor: UIViewController, MKMapViewDelegate, CLLocati
             self.map.centerCoordinate = pointAnnotation.coordinate
             self.map.addAnnotation(pinAnnotationView.annotation!)
         }
+        
+    }
+    
+    func loadMap() {
+        
+        self.locationManager.delegate = self
+        
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        self.locationManager.startUpdatingLocation()
+        
+        self.map.showsUserLocation = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // self.loadDoctorInfo()
+        self.loadDoctorInfo()
         
         self.loadMap()
+        
+        self.loadSumarryOpinions()
         
         self.nameLabel.text = self.doctorItem.name
         
