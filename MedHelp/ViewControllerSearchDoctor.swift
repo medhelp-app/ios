@@ -42,7 +42,10 @@ class ViewControllerSearchDoctor: UIViewController, UITableViewDataSource, UITab
                                 specialty = doctors["doctorType"] as! String
                             }
                         }
-                        let email = doctors["email"] as! String
+                        var email = ""
+                        if (doctors["email"] != nil) {
+                            email = doctors["email"] as! String
+                        }
                         var image = UIImage(named: "Profile")
                         if (doctors["profileImage"] != nil) {
                             if (doctors["profileImage"] as! String != "") {

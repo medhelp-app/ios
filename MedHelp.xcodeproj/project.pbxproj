@@ -26,6 +26,7 @@
 		732D615A1D0FC73200ECFF6D /* ImageCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D61591D0FC73100ECFF6D /* ImageCircle.swift */; };
 		732D617D1D10BBB400ECFF6D /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732D61741D10BB8C00ECFF6D /* Cosmos.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		732D617E1D10C3A700ECFF6D /* Cosmos.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 732D61741D10BB8C00ECFF6D /* Cosmos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		732D61801D10EFCA00ECFF6D /* ViewControllerRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D617F1D10EFCA00ECFF6D /* ViewControllerRating.swift */; };
 		732EFC151CC326E2005DD736 /* ViewControllerSingUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */; };
 		734862291CFBE77000E82824 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; };
 		734862301CFBE78000E82824 /* CryptoSwift.framework in Embed Framwork */ = {isa = PBXBuildFile; fileRef = 734862181CFBE0D800E82824 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -236,6 +237,7 @@
 		732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDatePicker.swift; sourceTree = "<group>"; };
 		732D61591D0FC73100ECFF6D /* ImageCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCircle.swift; sourceTree = "<group>"; };
 		732D616B1D10BB8C00ECFF6D /* Cosmos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cosmos.xcodeproj; path = CryptoSwift/../Cosmos/Cosmos.xcodeproj; sourceTree = "<group>"; };
+		732D617F1D10EFCA00ECFF6D /* ViewControllerRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerRating.swift; sourceTree = "<group>"; };
 		732EFC141CC326E2005DD736 /* ViewControllerSingUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSingUp.swift; sourceTree = "<group>"; };
 		734862091CFBE0CF00E82824 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		736D53C01CF9028300AD47D2 /* ViewControllerDoctorEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDoctorEdit.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				732D61451D0E124500ECFF6D /* ViewControllerAddProblem.swift */,
 				732D61471D0E18C000ECFF6D /* ViewControllerDropdown.swift */,
 				732D614D1D0EEB3F00ECFF6D /* ViewControllerDatePicker.swift */,
+				732D617F1D10EFCA00ECFF6D /* ViewControllerRating.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				730075021CE96E3A003313C1 /* ViewControllerDoctorProfile.swift in Sources */,
 				736D53C91CF912D700AD47D2 /* ViewControllerSearchDoctor.swift in Sources */,
 				732D613A1D0DACC300ECFF6D /* ProblemsHelper.swift in Sources */,
+				732D61801D10EFCA00ECFF6D /* ViewControllerRating.swift in Sources */,
 				736D53D21CFA5ED500AD47D2 /* SHA512.swift in Sources */,
 				732D61361D0CFE3E00ECFF6D /* ImageEncoder.swift in Sources */,
 				732D613E1D0DF98D00ECFF6D /* Problem.swift in Sources */,
